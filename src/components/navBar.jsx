@@ -4,9 +4,14 @@ import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
-    <nav>
+    <nav className=" flex justify-center items-center gap-6">
       {routes.map((route) => (
-        <NavLink key={route.path}>{route.title}</NavLink>
+        <NavLink
+          key={route.path}
+          className={({ isActive }) => (isActive ? " text-green-600" : "")}
+        >
+          {route.title}
+        </NavLink>
       ))}
     </nav>
   );
