@@ -1,7 +1,9 @@
+import "./index.css";
+
 function App() {
   return (
     <div className="App">
-      app
+      <h1 className=" text-3xl text-red-500"> app</h1>
     </div>
   );
 }
