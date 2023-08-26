@@ -11,7 +11,6 @@ export const useStudents = () => {
 };
 const StudentsProvider = ({ children }) => {
   const [students, setStudents] = useState([]);
-  console.log(students);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   useEffect(() => {
@@ -41,7 +40,7 @@ const StudentsProvider = ({ children }) => {
     setError(message);
   }
   return (
-    <StudentsContext.Provider value={{ students, getStudentById }}>
+    <StudentsContext.Provider value={{ students, getStudentById, isLoading }}>
       <div className="relative">
         {children}
         {isLoading && <Loader />}
