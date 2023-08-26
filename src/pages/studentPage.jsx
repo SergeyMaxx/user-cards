@@ -31,7 +31,7 @@ export default function StudentPage() {
                 />
               </div>
               <div className=" flex flex-col justify-center items-center gap-6 rounded-xl border w-full p-4">
-                <span className=" text-lg text-gray-800">
+                <span className=" text-xl text-gray-800 font-medium">
                   {student.firstName} {student.lastName}
                 </span>
                 <span>
@@ -73,7 +73,7 @@ export default function StudentPage() {
             </div>
             <div className="skils flex flex-col justify-between items-center rounded-xl border w-full p-4">
               <h2 className=" text-2xl font-semibold text-[#151515]">Навыки</h2>
-              <div className="flex justify-start items-center flex-wrap">
+              <div className="flex justify-center items-center flex-wrap">
                 {student?.skills.map((skill) => (
                   <ProgressBar
                     key={skill.label}

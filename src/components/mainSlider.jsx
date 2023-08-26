@@ -20,7 +20,7 @@ function MainSlider({ slidesLayouts }) {
           prevEl: ".swiper-main-button-prev",
         }}
         modules={[EffectFlip, Pagination, Navigation]}
-        loop={true}
+        // loop={true}
         className="mySwiper"
       >
         {slidesLayouts.map((slide, index) => (
@@ -39,6 +39,8 @@ function MainSlider({ slidesLayouts }) {
   );
 }
 
-MainSlider.propTypes = {};
+MainSlider.propTypes = {
+  slidesLayouts: PropTypes.arrayOf(PropTypes.node),
+};
 
 export default MainSlider;
