@@ -10,8 +10,8 @@ function NavBar() {
           key={route.path}
           className={({ isActive }) =>
             isActive
-              ? " text-blue-600 cursor-default underline underline-offset-4"
-              : "text-blue-900 hover:text-blue-400 transition duration-300"
+              ? " text-blue-600 cursor-default underline underline-offset-4 text-xl"
+              : "text-blue-900 hover:text-blue-400 transition duration-300 text-xl"
           }
           to={route.path}
         >

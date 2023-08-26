@@ -1,6 +1,7 @@
 import React from "react";
 import MainSlider from "../mainSlider";
 import { useParams, Outlet } from "react-router-dom";
+import ProgressBar from "../progressBar";
 
 function MainPage() {
   const { id } = useParams();
@@ -14,6 +15,7 @@ function MainPage() {
       <div className=" w-full lg:w-1/2  py-2 px-2">
         <MainSlider />
       </div>
+      <ProgressBar styles={" w-full"} value={30} label={"HTML"} />
     </section>
   );
 }
