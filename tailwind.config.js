@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
-  },
-  plugins: [],
+    extend: {
+      fontFamily: {
+        rubic_mono_one: ['Rubik Mono One, sans-serif'],
+      },
+    },
+    plugins: [],
+  }
 }
