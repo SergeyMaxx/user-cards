@@ -4,11 +4,11 @@ const students = [{
    lastName: "Родин",
    age: 35,
    info: "О себе",
-   infoBefore: [],
+   infoBefore: "Чем занимался раньше",
    img: "https://i.postimg.cc/x1NvgTd5/itsme.jpg",
    social: { tg: "", vk: "" },
-   role: "",
-   skills: [],
+   role: "студент",
+   skills: [{ label: "HTML", value: 50 }, { label: "TypeScript", value: 80 }, { label: "Css", value: 30 }],
    hobby: []
 
 }];

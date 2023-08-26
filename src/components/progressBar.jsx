@@ -11,7 +11,9 @@ function ProgressBar({ styles, value, rounded = true, label, type = "bar" }) {
       <div className=" w-[200px] px-2">
         {label && (
           <div className=" ">
-            <span className=" text-gray-800 pl-1 text-2xl  ">{label}</span>
+            <span className=" text-gray-800 pl-1 text-2xl  uppercase ">
+              {label}
+            </span>
           </div>
         )}
         {type === "bar" && (
