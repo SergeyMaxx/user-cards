@@ -1,7 +1,7 @@
-import { useRoutes } from "react-router-dom";
-import withRouter from "./components/hoc/withRoutes";
-import { routes } from "./routes";
-import NavBar from "./components/navBar";
+import { useRoutes } from 'react-router-dom';
+import withRouter from './components/hoc/withRoutes';
+import { routes } from './routes';
+import NavBar from './components/navBar';
 
 function App() {
   const appRoutes = useRoutes(routes);
