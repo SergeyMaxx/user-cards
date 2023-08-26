@@ -1,8 +1,10 @@
 import React from "react";
 import { routes } from "../routes";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from 'react-router-dom';
 
 function NavBar() {
+  const {pathname} = useLocation()
+
   return (
     <nav className=" flex justify-center items-center gap-6 py-2">
       {routes.map((route) => (
@@ -18,6 +20,10 @@ function NavBar() {
           {route.title}
         </NavLink>
       ))}
+      <p className="ml-5">
+        <span className="text-blue-600 font-extrabold">Home </span>
+        {pathname}
+      </p>
     </nav>
   );
 }
