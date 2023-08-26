@@ -1,10 +1,17 @@
 import React from 'react';
 import PropTypes, { object } from 'prop-types';
 import Button from './button';
+import { useStudents } from '../hooks/useStudents';
+import { getBookmarkStatus } from '../fakeApi/students';
+import { Link } from 'react-router-dom';
 
 const User = ({ userData }) => {
-  const handleClick = () => {
+  const bookmarkStatus = getBookmarkStatus(userData.id)
 
+  const { getFavorite } = useStudents()
+  const handleClick = () => {
+    console.log('handleClick')
+    //! тут можно было бы сделать history.push('/userData.id')
   }
 
   return (
@@ -17,15 +24,17 @@ const User = ({ userData }) => {
       <div>О себе: {userData.info}</div>
       <div className="w-[316px] flex justify-between">
         <Button
+          type = 'open'
           color='bg-blue-500'
           onClick={handleClick}
           text='открыть'
           rounded='rounded-md'
         />
         <Button
-          color='bg-gray-600'
-          onClick={handleClick}
-          text='добавить в избранное'
+          color={bookmarkStatus ? 'bg-red-500' : 'bg-gray-600'}
+          onClick={() => getFavorite(userData.id)}
+          text={bookmarkStatus ? 'удалить из избранного' : 'добавить в избранное'}
+          bg-gray-600
           rounded='rounded-md'
         />
       </div>
