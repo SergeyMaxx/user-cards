@@ -13,6 +13,21 @@ const students = [
       skills: [{ label: "HTML", value: 50 }, { label: "TypeScript", value: 80 }, { label: "Css", value: 30 }],
       hobby: [],
       portfolio: ["https://i.postimg.cc/8C9FPdpR/2023-08-26-14-24-47.png", "https://i.postimg.cc/wB88q7Kt/2023-08-26-14-26-13.png"]
+   },
+   {
+      id: "2",
+      firstName: "Сергей",
+      lastName: "Загорский",
+      age: 25,
+      info: "О себе",
+      infoBefore: "Чем занимался раньше",
+      img: "https://i.postimg.cc/jSN66fh5/500-500.jpg",
+      social: { tg: "@ZagSerSan", vk: "vk.com" },
+      projectRole: "что-то делал",
+      role: "студент",
+      skills: [{ label: "HTML", value: 50 }, { label: "TypeScript", value: 5 }, { label: "Css", value: 70 }],
+      hobby: [],
+      portfolio: ["https://i.postimg.cc/Kjw8cJ4D/weather-widget.png", "https://i.postimg.cc/KckKwM1D/tic-tac-toe.png"]
    }
 ];
 
