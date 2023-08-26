@@ -1,8 +1,7 @@
-import { useRoutes, Link } from 'react-router-dom';
-import withRouter from './components/hoc/withRoutes';
-import { routes } from './routes';
-import NavBar from './components/navBar';
-import MainPage from './layouts/mainPage';
+import { useRoutes, Link } from "react-router-dom";
+import withRouter from "./components/hoc/withRoutes";
+import { routes } from "./routes";
+import NavBar from "./components/navBar";
 
 function App() {
   const appRoutes = useRoutes(routes);
@@ -12,11 +11,9 @@ function App() {
         <header className="  container ">
           <NavBar />
         </header>
-        <MainPage />
         <main className="h-full  w-full container">{appRoutes}</main>
         <footer className="items-center relative  rounded-t-2xl container">
-          <span className=" px-2 text-xl text-gray-500">&copy;
-            <Link to={'https://result.school'} className=" hover:text-gray-800 transition duration-300">Result School</Link> Team 102</span>
+          <span className=" px-2 text-xl text-gray-500">&copy; <Link target="_blank" to={"https://result.school"} className=" hover:text-gray-800 transition duration-300">Result School</Link> Team 102</span>
         </footer>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { toast } from "react-toastify";
-import fetchAllStudents from "../fakeApi/students";
+import fetchAllStudents, { toggleFavorite } from "../fakeApi/students";
 import Loader from "../components/loader";
 
 const StudentsContext = React.createContext();
@@ -11,7 +11,8 @@ export const useStudents = () => {
 };
 const StudentsProvider = ({ children }) => {
   const [students, setStudents] = useState([]);
-  console.log(students);
+  const [favorite, setFavorite] = useState(JSON.parse(localStorage.getItem('favorite')));
+  // console.log(students);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   useEffect(() => {
@@ -23,6 +24,10 @@ const StudentsProvider = ({ children }) => {
       setError(null);
     }
   }, [error]);
+
+  const getFavorite = (id) => {
+    setFavorite(toggleFavorite(id))
+  }
   async function getAllStudents() {
     try {
       const content = await fetchAllStudents();
@@ -41,7 +46,7 @@ const StudentsProvider = ({ children }) => {
     setError(message);
   }
   return (
-    <StudentsContext.Provider value={{ students, getStudentById }}>
+    <StudentsContext.Provider value={{ students, getStudentById, favorite, getFavorite }}>
       <div className="relative">
         {children}
         {isLoading && <Loader />}
