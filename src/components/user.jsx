@@ -1,17 +1,17 @@
 import React from 'react';
-import PropTypes, { object } from 'prop-types';
+import PropTypes from 'prop-types';
 import Button from './button';
 import { useStudents } from '../hooks/useStudents';
 import { getBookmarkStatus } from '../fakeApi/students';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const User = ({ userData }) => {
   const bookmarkStatus = getBookmarkStatus(userData.id)
+  const navigate = useNavigate()
 
   const { getFavorite } = useStudents()
   const handleClick = () => {
-    console.log('handleClick')
-    //! тут можно было бы сделать history.push('/userData.id')
+    navigate(`/${userData.id}`)
   }
 
   return (
