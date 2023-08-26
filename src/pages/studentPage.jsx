@@ -1,5 +1,5 @@
-import React from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useStudents } from "../hooks/useStudents";
 import { transformAge } from "../utils/transformAge";
 import ProgressBar from "../components/progressBar";
@@ -7,9 +7,16 @@ import { tgLogo, vkLogo } from "../images";
 import MainSlider from "../components/mainSlider";
 
 export default function StudentPage() {
+  const navigate = useNavigate();
   const { id } = useParams();
-  const { getStudentById } = useStudents();
+  const { getStudentById, isLoading } = useStudents();
   const student = getStudentById(id);
+  useEffect(() => {
+    if (!student && !isLoading) {
+      navigate("/");
+    }
+  }, [student, isLoading, navigate]);
+
   return (
     student && (
       <section className=" my-20">
@@ -39,13 +46,18 @@ export default function StudentPage() {
                   Социальные сети
                 </h2>
                 <div className=" flex justify-center items-center gap-6 py-4">
-                  <Link>
-                    <img src={tgLogo} alt="Telegram" />
-                  </Link>
-
-                  <Link>
-                    <img src={vkLogo} alt="Vk" className=" scale-[1.4]" />
-                  </Link>
+                  {student.social?.map((link) => (
+                    <Link key={link.type} to={link.to} target="_blank">
+                      <img
+                        src={link.type === "tg" ? tgLogo : vkLogo}
+                        alt="Telegram"
+                        className={
+                          (link.type === "vk" ? " scale-[1.4]" : "") +
+                          " hover:opacity-80 transition duration-300"
+                        }
+                      />
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
@@ -72,23 +84,25 @@ export default function StudentPage() {
                 ))}
               </div>
             </div>
-            <div className="portfolio w-full  flex flex-col items-center  rounded-xl border p-4">
-              <h2 className=" text-2xl font-semibold text-[#151515] text-center mb-6">
-                Портфолио работ
-              </h2>
-              <div className=" w-2/3">
-                <MainSlider
-                  slidesLayouts={student.portfolio.map((slide, index) => (
-                    <img
-                      key={index}
-                      src={slide}
-                      alt="Портфолио"
-                      className=" aspect-square object-cover"
-                    />
-                  ))}
-                />
+            {student.portfolio?.length > 0 && (
+              <div className="portfolio w-full  flex flex-col items-center  rounded-xl border p-4">
+                <h2 className=" text-2xl font-semibold text-[#151515] text-center mb-6">
+                  Портфолио работ
+                </h2>
+                <div className=" w-2/3">
+                  <MainSlider
+                    slidesLayouts={student.portfolio.map((slide, index) => (
+                      <img
+                        key={index}
+                        src={slide}
+                        alt="Портфолио"
+                        className=" aspect-square object-cover"
+                      />
+                    ))}
+                  />
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
