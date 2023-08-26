@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { EffectFlip, Pagination, Navigation } from "swiper/modules";
 import { ChevronDoubleLeftIcon } from "@heroicons/react/20/solid";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 
 function MainSlider({ slidesLayouts }) {
   return (

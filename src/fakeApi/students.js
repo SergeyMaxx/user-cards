@@ -7,7 +7,7 @@ const students = [{
    infoBefore: "Чем занимался раньше",
    img: "https://i.postimg.cc/x1NvgTd5/itsme.jpg",
    social: [{ type: "tg", to: "link" }, { type: "vk", to: "link" }],
-   projectRole: "что-то делал",
+   projectRole: "что-то делал в проекте",
    role: "студент",
    skills: [{ label: "HTML", value: 50 }, { label: "TypeScript", value: 80 }, { label: "Css", value: 30 }],
    hobby: [],
