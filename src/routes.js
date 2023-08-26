@@ -1,3 +1,4 @@
+import Favorite from "./layouts/favorite";
 import MainPage from "./layouts/mainPage";
 import StudentPage from "./pages/studentPage";
 
@@ -17,7 +18,7 @@ export const routes = [
   },
   {
     path: "/favorite",
-    element: <MainPage />,
+    element: <Favorite />,
     display: true,
     title: "Избранное",
   }

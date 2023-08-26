@@ -38,4 +38,25 @@ const fetchAllStudents = () =>
       }, 1000);
    });
 
+export const toggleFavorite = (id) => {
+   if (localStorage.getItem('favorite')) {
+      let favoriteState = JSON.parse(localStorage.getItem('favorite'))
+
+      const isContain = favoriteState.includes(id)
+
+      isContain
+         ? favoriteState = favoriteState.filter(thisId => thisId !== id)
+         : favoriteState.push(id)
+
+      favoriteState.length === 0
+         ? localStorage.removeItem('favorite') 
+         : localStorage.setItem('favorite', JSON.stringify(favoriteState));
+
+      return favoriteState
+   } else {
+      localStorage.setItem("favorite", JSON.stringify([id]))
+      return JSON.parse(localStorage.getItem('favorite'))
+   }
+}
+
 export default fetchAllStudents;
