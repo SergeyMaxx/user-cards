@@ -16,6 +16,7 @@ function MainPage() {
         <MainSlider />
       </div>
       <ProgressBar styles={" w-full"} value={30} label={"HTML"} />
+      <ProgressBar styles={" w-full"} value={60} label={"HTML"} type="circle" />
     </section>
   );
 }
