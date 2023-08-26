@@ -10,13 +10,21 @@ const Favorite = () => {
       <h1 className=" uppercase text-3xl text-gray-900 ">
         Избранное
       </h1>
-      <div className="w-1/3 h-1 bg-black bg-gradient-to-r from-cyan-500 to-blue-500" />
-      <ul className="flex flex-wrap gap-10">
-        {students.length !== 0 && favorite && favorite.map(favId => (
-          <User key={students[favId-1].id} userData={students[favId-1]} />
-          ))
-        }
-      </ul>
+      <div className=" w-1/3 h-1 bg-black bg-gradient-to-r from-cyan-500 to-blue-500" />
+
+      {localStorage.getItem('favorite')
+        ? (
+          <div className="">
+            {students.length !== 0 && favorite && favorite.map(favId => (
+              <ul key={students[favId-1].id} className="flex flex-wrap gap-10">
+                <User userData={students[favId-1]} />
+              </ul>
+            ))}
+          </div>  
+        )
+        : <h1 className='mt-[20px]'>Избранных нету</h1>
+      }
+      
     </section>
 
   </>
