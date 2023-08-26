@@ -85,4 +85,13 @@ export const toggleFavorite = (id) => {
    }
 }
 
+export const getBookmarkStatus = (id) => {
+  if (localStorage.getItem('favorite')) {
+    let favoriteState = JSON.parse(localStorage.getItem('favorite'))
+    const isContain = favoriteState.includes(id)
+    return isContain
+  }
+  return false
+}
+
 export default fetchAllStudents;

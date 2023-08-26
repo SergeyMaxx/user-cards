@@ -1,11 +1,17 @@
 import React from 'react';
 import PropTypes, { object } from 'prop-types';
 import Button from './button';
+import { useStudents } from '../hooks/useStudents';
+import { getBookmarkStatus } from '../fakeApi/students';
 
 const User = ({ userData }) => {
+  const bookmarkStatus = getBookmarkStatus(userData.id)
+  
+  const { getFavorite } = useStudents()
   const handleClick = () => {
-
+    console.log(handleClick)
   }
+
 
   return (
     <li className="w-[350px] h-[500px] border border-gray-300 rounded-md shadow-lg flex flex-col justify-between items-center p-4">
@@ -23,9 +29,10 @@ const User = ({ userData }) => {
           rounded='rounded-md'
         />
         <Button
-          color='bg-gray-600'
-          onClick={handleClick}
-          text='добавить в избранное'
+          color={bookmarkStatus ? 'bg-red-500' : 'bg-gray-600'}
+          onClick={() => getFavorite(userData.id)}
+          text={bookmarkStatus ? 'удалить из избранного' : 'добавить в избранное'}
+          bg-gray-600
           rounded='rounded-md'
         />
       </div>
