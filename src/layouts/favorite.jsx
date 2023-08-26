@@ -12,7 +12,7 @@ const Favorite = () => {
   }
 
   return (<>
-    <div>all students</div>
+    <div>Главная страница</div>
     <div className='flex'>
       {students && students.map(item => (
         <div key={item.id} className='bg-[#cccccc] m-[5px]'>
@@ -24,7 +24,7 @@ const Favorite = () => {
 
     <hr className='my-[15px]'/>
 
-    <div>favorite students</div>
+    <div>Страница избранного</div>
     <div className='flex'>
       {students.length !== 0 && favorite && favorite.map(favId => (
         <div key={students[favId-1].id} className='bg-[#cccccc] m-[5px]'>
