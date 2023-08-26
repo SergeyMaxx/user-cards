@@ -12,11 +12,6 @@ export const useStudents = () => {
 const StudentsProvider = ({ children }) => {
   const [students, setStudents] = useState([]);
   const [favorite, setFavorite] = useState(JSON.parse(localStorage.getItem('favorite')));
-  
-  const getFavorite = (id) => {
-    setFavorite(toggleFavorite(id))
-  }
-
   // console.log(students);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -29,6 +24,10 @@ const StudentsProvider = ({ children }) => {
       setError(null);
     }
   }, [error]);
+
+  const getFavorite = (id) => {
+    setFavorite(toggleFavorite(id))
+  }
   async function getAllStudents() {
     try {
       const content = await fetchAllStudents();
