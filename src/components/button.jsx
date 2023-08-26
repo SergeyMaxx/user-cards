@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const Button = ({color, onClick, text, rounded}) => {
   return (
     <button
-      className={`${color} text-white px-4 py-2 ${rounded} shadow-lg font-semibold ml-2`}
+      className={`${color} text-white px-4 py-2 ${rounded} shadow-lg font-semibold mк-2`}
       onClick={onClick}
     >
       {text}

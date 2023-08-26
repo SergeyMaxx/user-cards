@@ -18,7 +18,7 @@ function MainPage() {
       <h1 className=" uppercase text-3xl text-gray-900 ">
         Наша команда
       </h1>
-      <div className=" w-1/3 h-1 bg-black bg-gradient-to-r from-cyan-500 to-blue-500" />
+      <div className=" w-1/3 h-1 bg-black bg-gradient-to-r from-cyan-500 to-blue-500 mb-10" />
       <div className="">
         {students &&
           <ul className="flex flex-wrap gap-10">

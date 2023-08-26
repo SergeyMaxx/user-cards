@@ -15,7 +15,7 @@ const User = ({ userData }) => {
       <p>{userData.firstName} {userData.lastName}</p>
       <p>{userData.age} лет</p>
       <div>О себе: {userData.info}</div>
-      <div>
+      <div className="w-[316px] flex justify-between">
         <Button
           color='bg-blue-500'
           onClick={handleClick}

@@ -37,7 +37,7 @@ const students = [
     age: 39,
     info: 'Frontend разработчик',
     infoBefore: 'учился в Result School',
-    img: 'https://i.postimg.cc/1XHT6n0v/Smart-Select-Image-2020-01-14-20-48-50.png',
+    img: 'https://i.postimg.cc/j5H8gPzQ/Smart-Select-Image-2020-01-14-20-48-50-1.png',
     social: [{ type: "tg", to: "" }, { type: "vk", to: "https://vk.com" }],
     projectRole: 'MainPage, Button',
     role: 'Team Lead',
