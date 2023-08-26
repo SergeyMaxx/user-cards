@@ -1,4 +1,5 @@
-import MainPage from "./components/layouts/mainPage";
+import MainPage from "./layouts/mainPage";
+import StudentPage from "./pages/studentPage";
 
 export const routes = [
   {
@@ -9,7 +10,7 @@ export const routes = [
     title: "Главная",
     children: [{
       path: ":id",
-      element: <MainPage />,
+      element: <StudentPage />,
       display: false,
       title: "Страница студента",
     }]

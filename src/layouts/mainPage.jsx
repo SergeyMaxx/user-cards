@@ -1,11 +1,10 @@
 import React from "react";
-import MainSlider from "../mainSlider";
+import MainSlider from "../components/mainSlider";
 import { useParams, Outlet } from "react-router-dom";
-import ProgressBar from "../progressBar";
+import ProgressBar from "../components/progressBar";
 
 function MainPage() {
   const { id } = useParams();
-  console.log(id);
   return id ? (
     <Outlet />
   ) : (
