@@ -22,7 +22,7 @@ const students = [
       info: "О себе",
       infoBefore: "Чем занимался раньше",
       img: "https://i.postimg.cc/jSN66fh5/500-500.jpg",
-      social: [{ type: "tg", to: "link" }, { type: "vk", to: "link" }],
+      social: [{ type: "tg", to: "@ZagSerSan" }, { type: "vk", to: "vk.com" }],
       projectRole: "что-то делал",
       role: "студент",
       skills: [{ label: "HTML", value: 50 }, { label: "TypeScript", value: 5 }, { label: "Css", value: 70 }],
