@@ -6,8 +6,9 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { EffectFlip, Pagination, Navigation } from "swiper/modules";
 import { ChevronDoubleLeftIcon } from "@heroicons/react/20/solid";
+import { PropTypes } from "prop-types";
 
-function MainSlider() {
+function MainSlider({ slidesLayouts }) {
   return (
     <>
       <Swiper
@@ -22,21 +23,9 @@ function MainSlider() {
         loop={true}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <div className=" w-full min-h-[50vh] bg-gray-100 border aspect-square rounded-md">
-            Здесь карточка студента 1
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" w-full min-h-[50vh] bg-gray-100 border  aspect-square rounded-md">
-            Здесь карточка студента 2
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" w-full min-h-[50vh] bg-gray-100 border aspect-square rounded-md">
-            Здесь карточка студента 3
-          </div>
-        </SwiperSlide>
+        {slidesLayouts.map((slide, index) => (
+          <SwiperSlide key={index}>{slide}</SwiperSlide>
+        ))}
       </Swiper>
       <div className=" hidden sm:flex justify-between items-center py-2">
         <button className="swiper-main-button-prev">
@@ -49,5 +38,7 @@ function MainSlider() {
     </>
   );
 }
+
+MainSlider.propTypes = {};
 
 export default MainSlider;

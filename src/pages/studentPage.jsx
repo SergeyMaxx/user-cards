@@ -1,8 +1,10 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useStudents } from "../hooks/useStudents";
 import { transformAge } from "../utils/transformAge";
 import ProgressBar from "../components/progressBar";
+import { tgLogo, vkLogo } from "../images";
+import MainSlider from "../components/mainSlider";
 
 export default function StudentPage() {
   const { id } = useParams();
@@ -10,40 +12,55 @@ export default function StudentPage() {
   const student = getStudentById(id);
   return (
     student && (
-      <section>
-        <div className=" flex justify-between gap-6">
-          <div className=" w-5/12">
-            <div className=" flex flex-col justify-between items-center gap-6">
-              <div className="">
+      <section className=" my-20">
+        <div className=" flex flex-col md:flex-row  justify-between gap-6 text-lg text-gray-800 ">
+          <div className="w-full  md:w-5/12 ">
+            <div className=" flex flex-col justify-between items-center gap-6 h-full">
+              <div className=" w-full flex justify-center items-center rounded-xl border p-4">
                 <img
                   src={student.img}
                   alt="Моя фотография"
-                  className=" aspect-square object-cover"
+                  className=" aspect-square object-cover rounded-xl "
                 />
               </div>
-              <div className=" flex flex-col gap-6">
-                <span>
+              <div className=" flex flex-col justify-center items-center gap-6 rounded-xl border w-full p-4">
+                <span className=" text-lg text-gray-800">
                   {student.firstName} {student.lastName}
                 </span>
                 <span>
                   {"Возраст: "}
                   {transformAge(student.age)}
                 </span>
-                <div className="">badge</div>
+                <div className="">{student.role}</div>
               </div>
-              <div className="">
-                <h2>Социальные сети</h2>
+              <div className=" h-full w-full"></div>
+              <div className=" rounded-xl border w-full p-2">
+                <h2 className=" text-2xl font-semibold text-[#151515] w-full text-center">
+                  Социальные сети
+                </h2>
+                <div className=" flex justify-center items-center gap-6 py-4">
+                  <Link>
+                    <img src={tgLogo} alt="Telegram" />
+                  </Link>
+
+                  <Link>
+                    <img src={vkLogo} alt="Vk" className=" scale-[1.4]" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-          <div className=" w-7/12 flex flex-col items-center">
-            <div className="info  flex flex-col justify-between items-center">
-              <h2>Информация о студенте</h2>
-              <span>{student.info}</span>
-              <span>{student.infoBefore}</span>
+          <div className="w-full  md:w-7/12 flex flex-col items-center gap-6">
+            <div className="info  flex flex-col justify-between items-start rounded-xl border w-full p-4">
+              <h2 className=" text-2xl font-semibold text-[#151515] text-center w-full ">
+                Информация о студенте
+              </h2>
+              <p className="indent-8">{student.info}</p>
+              <p className="indent-8">{student.infoBefore}</p>
+              <p className="indent-8">{student.projectRole}</p>
             </div>
-            <div className="skils flex flex-col justify-between items-center">
-              <h2>Навыки</h2>
+            <div className="skils flex flex-col justify-between items-center rounded-xl border w-full p-4">
+              <h2 className=" text-2xl font-semibold text-[#151515]">Навыки</h2>
               <div className="flex justify-start items-center flex-wrap">
                 {student?.skills.map((skill) => (
                   <ProgressBar
@@ -53,6 +70,23 @@ export default function StudentPage() {
                     type="circle"
                   />
                 ))}
+              </div>
+            </div>
+            <div className="portfolio w-full  flex flex-col items-center  rounded-xl border p-4">
+              <h2 className=" text-2xl font-semibold text-[#151515] text-center mb-6">
+                Портфолио работ
+              </h2>
+              <div className=" w-2/3">
+                <MainSlider
+                  slidesLayouts={student.portfolio.map((slide, index) => (
+                    <img
+                      key={index}
+                      src={slide}
+                      alt="Портфолио"
+                      className=" aspect-square object-cover"
+                    />
+                  ))}
+                />
               </div>
             </div>
           </div>
