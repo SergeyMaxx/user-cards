@@ -11,7 +11,9 @@ export const useStudents = () => {
 };
 const StudentsProvider = ({ children }) => {
   const [students, setStudents] = useState([]);
-  const [favorite, setFavorite] = useState(JSON.parse(localStorage.getItem('favorite')));
+  const [favorite, setFavorite] = useState(
+    JSON.parse(localStorage.getItem("favorite"))
+  );
   // console.log(students);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -26,8 +28,8 @@ const StudentsProvider = ({ children }) => {
   }, [error]);
 
   const getFavorite = (id) => {
-    setFavorite(toggleFavorite(id))
-  }
+    setFavorite(toggleFavorite(id));
+  };
   async function getAllStudents() {
     try {
       const content = await fetchAllStudents();
@@ -46,7 +48,9 @@ const StudentsProvider = ({ children }) => {
     setError(message);
   }
   return (
-    <StudentsContext.Provider value={{ students, getStudentById, favorite, getFavorite }}>
+    <StudentsContext.Provider
+      value={{ students, getStudentById, favorite, getFavorite, isLoading }}
+    >
       <div className="relative">
         {children}
         {isLoading && <Loader />}
