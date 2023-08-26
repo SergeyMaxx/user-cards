@@ -1,23 +1,23 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/effect-flip";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { EffectFlip, Pagination, Navigation } from "swiper/modules";
-import { ChevronDoubleLeftIcon } from "@heroicons/react/20/solid";
-import { PropTypes } from "prop-types";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-flip';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { EffectFlip, Pagination, Navigation } from 'swiper/modules';
+import { ChevronDoubleLeftIcon } from '@heroicons/react/20/solid';
+import PropTypes from 'prop-types';
 
 function MainSlider({ slidesLayouts }) {
   return (
     <>
       <Swiper
-        effect={"flip"}
+        effect={'flip'}
         grabCursor={true}
         pagination={true}
         navigation={{
-          nextEl: ".swiper-main-button-next",
-          prevEl: ".swiper-main-button-prev",
+          nextEl: '.swiper-main-button-next',
+          prevEl: '.swiper-main-button-prev',
         }}
         modules={[EffectFlip, Pagination, Navigation]}
         loop={true}
@@ -39,6 +39,8 @@ function MainSlider({ slidesLayouts }) {
   );
 }
 
-MainSlider.propTypes = {};
+MainSlider.propTypes = {
+  slidesLayout: PropTypes.array
+};
 
 export default MainSlider;
