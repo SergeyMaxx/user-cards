@@ -15,7 +15,7 @@ const StudentsProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   useEffect(() => {
-    getStudents();
+    getAllStudents();
   }, []);
   useEffect(() => {
     if (error !== null) {
@@ -23,7 +23,7 @@ const StudentsProvider = ({ children }) => {
       setError(null);
     }
   }, [error]);
-  async function getStudents() {
+  async function getAllStudents() {
     try {
       const content = await fetchAllStudents();
       setStudents(content);

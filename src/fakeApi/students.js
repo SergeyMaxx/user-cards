@@ -5,7 +5,7 @@ const students = [{
    age: 35,
    info: "О себе",
    infoBefore: [],
-   img: "",
+   img: "https://i.postimg.cc/x1NvgTd5/itsme.jpg",
    social: { tg: "", vk: "" },
    role: "",
    skills: [],
