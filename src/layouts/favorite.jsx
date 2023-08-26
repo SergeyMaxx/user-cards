@@ -11,14 +11,21 @@ const Favorite = () => {
         Избранное
       </h1>
       <div className=" w-1/3 h-1 bg-black bg-gradient-to-r from-cyan-500 to-blue-500" />
-      <div className="">
-        {students.length !== 0 && favorite && favorite.map(favId => (
-          <ul key={students[favId-1].id} className="flex flex-wrap gap-10">
-            <User userData={students[favId-1]} />
-          </ul>
-        ))
-        }
-      </div>
+
+      {localStorage.getItem('favorite')
+        ? (
+          <div className="">
+            {students.length !== 0 && favorite && favorite.map(favId => (
+              <ul key={students[favId-1].id} className="flex flex-wrap gap-10">
+                <User userData={students[favId-1]} />
+              </ul>
+            ))}
+          </div>  
+        )
+        : <h1 className='mt-[20px]'>Избранных нету</h1>
+      }
+
+      
     </section>
 
     {/* <div className='flex'>
