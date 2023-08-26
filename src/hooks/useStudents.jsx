@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { toast } from "react-toastify";
 import fetchAllStudents from "../fakeApi/students";
+import Loader from "../components/loader";
 
 const StudentsContext = React.createContext();
 
@@ -41,7 +42,10 @@ const StudentsProvider = ({ children }) => {
   }
   return (
     <StudentsContext.Provider value={{ students, getStudentById }}>
-      {!isLoading ? children : <h1>Loading...</h1>}
+      <div className="relative">
+        {children}
+        {isLoading && <Loader />}
+      </div>
     </StudentsContext.Provider>
   );
 };
