@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import { routes } from "../routes";
 
-function Breadcrumbs() {
+function Breadcrumbs({ endCrumb }) {
   const location = useLocation();
   const paths = location.pathname.split("/").filter((path) => path);
   return (
@@ -14,9 +14,7 @@ function Breadcrumbs() {
         const currentPath = `/${paths.slice(0, index + 1).join("/")}`;
         let matchingRoute = routes.find((route) => route.path === currentPath);
         if (!matchingRoute) {
-          matchingRoute = routes[index].children
-            ? routes[index].children[0]
-            : undefined;
+          matchingRoute = { title: endCrumb };
         }
         const breadcrumbTitle = matchingRoute ? matchingRoute.title : path;
 
