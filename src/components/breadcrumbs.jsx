@@ -6,19 +6,30 @@ function Breadcrumbs() {
   const location = useLocation();
   const paths = location.pathname.split("/").filter((path) => path);
   return (
-    <nav className=" flex ">
-      <Link to="/">Главная</Link>
+    <nav className=" flex gap-2 text-sm my-4">
+      <Link to="/" className=" hover:opacity-60 transition duration-300">
+        Главная
+      </Link>
       {paths.map((path, index) => {
         const currentPath = `/${paths.slice(0, index + 1).join("/")}`;
-        const matchingRoute = routes.find(
-          (route) => route.path === currentPath
-        );
+        let matchingRoute = routes.find((route) => route.path === currentPath);
+        if (!matchingRoute) {
+          matchingRoute = routes[index].children
+            ? routes[index].children[0]
+            : undefined;
+        }
         const breadcrumbTitle = matchingRoute ? matchingRoute.title : path;
 
         return (
-          <Link to={currentPath} key={path}>
-            /{breadcrumbTitle}
-          </Link>
+          <div key={path} className=" flex gap-2">
+            <span>/</span>
+            <Link
+              to={currentPath}
+              className=" hover:opacity-60 transition duration-300"
+            >
+              {breadcrumbTitle}
+            </Link>
+          </div>
         );
       })}
     </nav>

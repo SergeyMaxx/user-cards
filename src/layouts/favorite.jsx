@@ -7,7 +7,7 @@ const Favorite = () => {
 
   return (
     <>
-      <section className="flex flex-col justify-between gap-2 items-center my-20">
+      <section className="flex flex-col justify-between gap-2 items-center my-10">
         <h1 className=" uppercase text-3xl text-gray-900 ">Избранное</h1>
         <div className=" w-1/3 h-1 bg-black bg-gradient-to-r from-cyan-500 to-blue-500 mb-10" />
 
@@ -16,11 +16,14 @@ const Favorite = () => {
             {students.length !== 0 &&
               favorite &&
               favorite.map((favId) => (
-                <User key={students[favId-1].id} userData={students[favId - 1]} />
+                <User
+                  key={students[favId - 1].id}
+                  userData={students[favId - 1]}
+                />
               ))}
           </ul>
         ) : (
-          <h1 className="mt-[20px]">Избранных нету</h1>
+          <h1 className="mt-[20px]">В избранном пусто</h1>
         )}
       </section>
     </>

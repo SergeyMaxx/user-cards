@@ -5,6 +5,10 @@ import { transformAge } from "../utils/transformAge";
 import ProgressBar from "../components/progressBar";
 import { tgLogo, vkLogo } from "../images";
 import MainSlider from "../components/mainSlider";
+import Button from "../components/button";
+import { getBookmarkStatus } from "../fakeApi/students";
+import CommentsProvider from "../hooks/useComments";
+import Comments from "../components/comments/comments";
 
 export default function StudentPage() {
   const navigate = useNavigate();
@@ -16,10 +20,11 @@ export default function StudentPage() {
       navigate("/");
     }
   }, [student, isLoading, navigate]);
-
+  const bookmarkStatus = getBookmarkStatus(id);
+  const { getFavorite } = useStudents();
   return (
     student && (
-      <section className=" my-20">
+      <section className=" my-10">
         <div className=" flex flex-col md:flex-row  justify-between gap-6 text-lg text-gray-800 ">
           <div className="w-full  md:w-5/12 ">
             <div className=" flex flex-col justify-between items-center gap-6 h-full">
@@ -40,7 +45,24 @@ export default function StudentPage() {
                 </span>
                 <div className="">{student.role}</div>
               </div>
-              <div className=" h-full w-full"></div>
+              <div className="  w-full  flex justify-center">
+                <Button
+                  color={bookmarkStatus ? "bg-red-500" : "bg-gray-600"}
+                  onClick={() => getFavorite(id)}
+                  text={
+                    bookmarkStatus
+                      ? "удалить из избранного"
+                      : "добавить в избранное"
+                  }
+                  bg-gray-600
+                  rounded="rounded-md"
+                />
+              </div>
+              <div className=" h-full w-full rounded-xl border  p-2">
+                <h2 className=" text-2xl font-semibold text-[#151515] w-full text-center">
+                  Хобби
+                </h2>
+              </div>
               <div className=" rounded-xl border w-full p-2">
                 <h2 className=" text-2xl font-semibold text-[#151515] w-full text-center">
                   Социальные сети
@@ -108,6 +130,11 @@ export default function StudentPage() {
               </div>
             )}
           </div>
+        </div>
+        <div className="">
+          <CommentsProvider>
+            <Comments />
+          </CommentsProvider>
         </div>
       </section>
     )
