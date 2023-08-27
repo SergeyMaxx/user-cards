@@ -101,9 +101,19 @@ export default function StudentPage() {
               <h2 className=" text-2xl font-semibold text-[#151515] text-center w-full ">
                 Информация о студенте
               </h2>
-              <p className="indent-8">{student.info}</p>
-              <p className="indent-8">{student.infoBefore}</p>
-              <p className="indent-8">{student.projectRole}</p>
+              <p className="indent-8">
+                <span className=" font-semibold">О себе: </span> {student.info}
+              </p>
+              <p className="indent-8">
+                <span className=" font-semibold">Чем занимался до: </span>{" "}
+                {student.infoBefore}
+              </p>
+              <p className="indent-8">
+                <span className=" font-semibold">
+                  Что сделал в этом проекте:{" "}
+                </span>{" "}
+                {student.projectRole}
+              </p>
             </div>
             <div className="skils flex flex-col justify-between items-center rounded-xl border w-full p-4">
               <h2 className=" text-2xl font-semibold text-[#151515]">Навыки</h2>

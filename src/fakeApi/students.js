@@ -27,10 +27,10 @@ const students = [
       projectRole: "отдыхал :D",
       role: "студент",
       skills: [
-        { label: "HTML", value: 50 },
-        { label: "Css", value: 70 },
-        { label: "JavaScript", value: 60 },
-        { label: "React", value: 30 }
+         { label: "HTML", value: 50 },
+         { label: "Css", value: 70 },
+         { label: "JavaScript", value: 60 },
+         { label: "React", value: 30 }
       ],
       hobbies: ['Гитара', 'Документальные фильмы', 'Общение', 'Бизнес', 'Музыка'],
       portfolio: ["https://i.postimg.cc/Kjw8cJ4D/weather-widget.png", "https://i.postimg.cc/KckKwM1D/tic-tac-toe.png"]
