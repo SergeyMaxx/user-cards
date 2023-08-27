@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { toast } from "react-toastify";
 import fetchAllStudents, { toggleFavorite } from "../fakeApi/students";
 import Loader from "../components/loader";
+import studentsService from "../service/students.service";
 
 const StudentsContext = React.createContext();
 
@@ -14,7 +15,6 @@ const StudentsProvider = ({ children }) => {
   const [favorite, setFavorite] = useState(
     JSON.parse(localStorage.getItem("favorite"))
   );
-  // console.log(students);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   useEffect(() => {
