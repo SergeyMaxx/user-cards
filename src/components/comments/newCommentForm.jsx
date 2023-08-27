@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import Button from "../button";
 
 const initialData = {
@@ -9,17 +9,21 @@ const initialData = {
 
 function NewCommentForm({ onAddComment }) {
   const [data, setData] = useState(initialData);
+
   const handleChange = (target, e) => {
     setData((prev) => ({ ...prev, [target]: e.target.value }));
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddComment(data);
     clearForm();
   };
+
   const clearForm = () => {
     setData(initialData);
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <h2 className="dark:text-slate-100 text-2xl font-semibold text-[#151515] w-full text-center">

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function Loader() {
   return (
@@ -22,7 +22,7 @@ function Loader() {
           fill="currentFill"
         />
       </svg>
-      <span className="sr-only"></span>
+      <span className="sr-only" />
     </div>
   );
 }

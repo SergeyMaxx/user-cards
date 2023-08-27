@@ -1,35 +1,36 @@
-import React, { useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
-import { useStudents } from "../hooks/useStudents";
-import { transformAge } from "../utils/transformAge";
-import ProgressBar from "../components/progressBar";
-import { tgLogo, vkLogo } from "../images";
-import MainSlider from "../components/mainSlider";
-import Badge from "../components/badge";
-import { randomColor } from "../utils/randomColor";
-import Button from "../components/button";
-import { getBookmarkStatus } from "../fakeApi/students";
-import CommentsProvider from "../hooks/useComments";
-import Comments from "../components/comments/comments";
-import Breadcrumbs from "../components/breadcrumbs";
+import React, { useEffect } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useStudents } from '../hooks/useStudents';
+import { transformAge } from '../utils/transformAge';
+import ProgressBar from '../components/progressBar';
+import { tgLogo, vkLogo } from '../images';
+import MainSlider from '../components/mainSlider';
+import Badge from '../components/badge';
+import { randomColor } from '../utils/randomColor';
+import Button from '../components/button';
+import { getBookmarkStatus } from '../fakeApi/students';
+import CommentsProvider from '../hooks/useComments';
+import Comments from '../components/comments/comments';
+import Breadcrumbs from '../components/breadcrumbs';
 
 export default function StudentPage() {
   const navigate = useNavigate();
   const { id } = useParams();
   const { getStudentById, isLoading } = useStudents();
   const student = getStudentById(id);
+  const bookmarkStatus = getBookmarkStatus(id);
+  const { getFavorite } = useStudents();
 
   useEffect(() => {
     if (!student && !isLoading) {
-      navigate("/");
+      navigate('/');
     }
   }, [student, isLoading, navigate]);
-  const bookmarkStatus = getBookmarkStatus(id);
-  const { getFavorite } = useStudents();
+
   return (
     student && (
       <>
-        <Breadcrumbs endCrumb={student.firstName + " " + student.lastName} />
+        <Breadcrumbs endCrumb={student.firstName + ' ' + student.lastName} />
         <section className=" my-10">
           <div className=" flex flex-col md:flex-row  justify-between gap-6 text-lg text-gray-800 ">
             <div className="w-full  md:w-5/12 ">
@@ -46,7 +47,7 @@ export default function StudentPage() {
                     {student.firstName} {student.lastName}
                   </span>
                   <span className="dark:text-slate-100">
-                    {"Возраст: "}
+                    {'Возраст: '}
                     {transformAge(student.age)}
                   </span>
                   <div className="">
@@ -55,12 +56,12 @@ export default function StudentPage() {
                 </div>
                 <div className="  w-full  flex justify-center">
                   <Button
-                    color={bookmarkStatus ? "bg-red-500" : "bg-gray-600"}
+                    color={bookmarkStatus ? 'bg-red-500' : 'bg-gray-600'}
                     onClick={() => getFavorite(id)}
                     text={
                       bookmarkStatus
-                        ? "удалить из избранного"
-                        : "добавить в избранное"
+                        ? 'удалить из избранного'
+                        : 'добавить в избранное'
                     }
                     bg-gray-600
                     rounded="rounded-md"
@@ -86,11 +87,11 @@ export default function StudentPage() {
                     {student.social?.map((link) => (
                       <Link key={link.type} to={link.to} target="_blank">
                         <img
-                          src={link.type === "tg" ? tgLogo : vkLogo}
+                          src={link.type === 'tg' ? tgLogo : vkLogo}
                           alt="Telegram"
                           className={
-                            (link.type === "vk" ? " scale-[1.4]" : "") +
-                            " hover:opacity-80 transition duration-300"
+                            (link.type === 'vk' ? ' scale-[1.4]' : '') +
+                            ' hover:opacity-80 transition duration-300'
                           }
                         />
                       </Link>
@@ -107,19 +108,19 @@ export default function StudentPage() {
                 <p className="dark:text-slate-100 ml-[10px] mb-[10px]">
                   <span className="dark:text-slate-400 text-[#979797]">
                     Обо мне:
-                  </span>{" "}
+                  </span>{' '}
                   {student.info}
                 </p>
                 <p className="dark:text-slate-100 ml-[10px] mb-[10px]">
                   <span className="dark:text-slate-400 text-[#979797]">
                     Предыстория:
-                  </span>{" "}
+                  </span>{' '}
                   {student.infoBefore}
                 </p>
                 <p className="dark:text-slate-100 ml-[10px]">
                   <span className="dark:text-slate-400 text-[#979797]">
                     Роль в проекте:
-                  </span>{" "}
+                  </span>{' '}
                   {student.projectRole}
                 </p>
               </div>

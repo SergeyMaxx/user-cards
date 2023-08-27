@@ -11,6 +11,7 @@ const User = ({ userData }) => {
   const navigate = useNavigate();
 
   const { getFavorite } = useStudents();
+
   const handleClick = () => {
     navigate(`/${userData.id}`);
   };
@@ -24,7 +25,9 @@ const User = ({ userData }) => {
         {userData.firstName} {userData.lastName}
       </p>
       <p className="dark:text-slate-100 mb-2">{userData.age} лет</p>
-      <div className="dark:text-slate-100"><span className="text-slate-400">О себе:</span> {userData.info}</div>
+      <div className="dark:text-slate-100">
+        <span className="text-slate-400">О себе:</span> {userData.info}
+      </div>
       <div className="w-[316px] flex justify-between mt-4">
         <Button
           type="open"

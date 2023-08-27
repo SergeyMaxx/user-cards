@@ -3,18 +3,16 @@ import PropTypes from "prop-types";
 import { toast } from "react-toastify";
 import fetchAllStudents, { toggleFavorite } from "../fakeApi/students";
 import Loader from "../components/loader";
-import studentsService from "../service/students.service";
 
 const StudentsContext = React.createContext();
 
 export const useStudents = () => {
   return useContext(StudentsContext);
 };
+
 const StudentsProvider = ({ children }) => {
   const [students, setStudents] = useState([]);
-  const [favorite, setFavorite] = useState(
-    JSON.parse(localStorage.getItem("favorite"))
-  );
+  const [favorite, setFavorite] = useState(JSON.parse(localStorage.getItem("favorite")));
   const [darkmode, setDarkmode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -24,6 +22,7 @@ const StudentsProvider = ({ children }) => {
     // darkmode
     setTheme()
   }, []);
+
   useEffect(() => {
     if (error !== null) {
       toast.error(error);
@@ -34,6 +33,7 @@ const StudentsProvider = ({ children }) => {
   const getFavorite = (id) => {
     setFavorite(toggleFavorite(id));
   };
+
   async function getAllStudents() {
     try {
       const content = await fetchAllStudents();
@@ -44,13 +44,16 @@ const StudentsProvider = ({ children }) => {
       errorCatcher(error);
     }
   }
+
   function getStudentById(id) {
     return students.find((u) => u.id === id);
   }
+
   function errorCatcher(error) {
     const { message } = error.response.data;
     setError(message);
   }
+
   const setTheme = () => {
     let darkmodeType = localStorage.getItem('darkmode')
 
@@ -61,7 +64,6 @@ const StudentsProvider = ({ children }) => {
       localStorage.setItem('darkmode', 'light')
       document.body.classList.remove('dark')
     }
-
   }
 
   return (

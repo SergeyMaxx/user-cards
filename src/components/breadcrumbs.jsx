@@ -5,6 +5,7 @@ import { routes } from "../routes";
 function Breadcrumbs({ endCrumb }) {
   const location = useLocation();
   const paths = location.pathname.split("/").filter((path) => path);
+
   return (
     <nav className=" flex gap-2 text-sm my-4">
       <Link to="/" className="dark:text-slate-200 hover:opacity-60 transition duration-300">

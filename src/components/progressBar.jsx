@@ -1,11 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-function ProgressBar({ styles, value, rounded = true, label, type = "bar" }) {
+function ProgressBar({ styles, value, rounded = true, label, type = 'bar' }) {
   const circleWidth = 100;
   const radius = circleWidth / 2 - 15 / 2;
   const dashArray = radius * Math.PI * 2;
   const dashOffset = dashArray - (dashArray * value) / 100;
+
   return (
     <>
       <div className=" w-[200px] px-2 my-3">
@@ -16,16 +17,16 @@ function ProgressBar({ styles, value, rounded = true, label, type = "bar" }) {
             </span>
           </div>
         )}
-        {type === "bar" && (
+        {type === 'bar' && (
           <div
             className={
               ` h-10 overflow-hidden border w-full  bg-gray-200` +
               styles +
-              (rounded ? " rounded-md " : " ")
+              (rounded ? ' rounded-md ' : ' ')
             }
           >
             <div
-              className={" h-full bg-blue-500 flex items-center "}
+              className={' h-full bg-blue-500 flex items-center '}
               style={{ width: `${value}%` }}
             >
               <span className=" dark:text-slate-100 text-xl pl-2  text-gray-800">
@@ -34,7 +35,7 @@ function ProgressBar({ styles, value, rounded = true, label, type = "bar" }) {
             </div>
           </div>
         )}
-        {type === "circle" && (
+        {type === 'circle' && (
           <div className=" flex justify-center">
             <svg
               width={circleWidth}
@@ -44,28 +45,28 @@ function ProgressBar({ styles, value, rounded = true, label, type = "bar" }) {
               <circle
                 cx={circleWidth / 2}
                 cy={circleWidth / 2}
-                strokeWidth={"15px"}
+                strokeWidth={'15px'}
                 r={radius}
                 className=" fill-none stroke-gray-200"
               />
               <circle
                 cx={circleWidth / 2}
                 cy={circleWidth / 2}
-                strokeWidth={"15px"}
+                strokeWidth={'15px'}
                 r={radius}
                 className=" fill-none stroke-blue-500 "
                 style={{
                   strokeDasharray: dashArray,
                   strokeDashoffset: dashOffset,
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
+                  strokeLinecap: 'round',
+                  strokeLinejoin: 'round',
                 }}
                 transform={`rotate(-90 ${circleWidth / 2} ${circleWidth / 2})`}
               />
               <text
-                x={"50%"}
-                y={"50%"}
-                dy={"0.3em"}
+                x={'50%'}
+                y={'50%'}
+                dy={'0.3em'}
                 textAnchor="middle"
                 className=" dark:fill-slate-100 text-xl fill-gray-800"
               >

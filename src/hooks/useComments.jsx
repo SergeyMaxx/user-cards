@@ -10,6 +10,7 @@ const CommentContext = React.createContext();
 export const useComments = () => {
   return useContext(CommentContext);
 };
+
 const CommentsProvider = ({ children }) => {
   const { id } = useParams();
   const [comments, setComments] = useState([]);
@@ -25,6 +26,7 @@ const CommentsProvider = ({ children }) => {
       console.log(error)
     } 
   }
+
   async function createComment(data) {
     const comment = {
       ...data,
@@ -32,6 +34,7 @@ const CommentsProvider = ({ children }) => {
       pageId: id,
       created_at: Date.now(),
     };
+
     try {
       const content = await commentsService.createComment(comment);
       setIsLoading(false);
@@ -41,6 +44,7 @@ const CommentsProvider = ({ children }) => {
       errorCatcher(error);
     }
   }
+
   async function getComments() {
     try {
       const content = await commentsService.getComments();
@@ -61,15 +65,18 @@ const CommentsProvider = ({ children }) => {
     const { message } = error;
     setError(message);
   }
+
   useEffect(() => {
     if (error !== null) {
       toast(error);
       setError(null);
     }
   }, [error]);
+
   useEffect(() => {
     getComments();
   }, [id]);
+
   return (
     <CommentContext.Provider
       value={{ comments, createComment, isLoading, getCommentsById, removeComment }}

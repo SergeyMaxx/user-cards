@@ -8,21 +8,24 @@ function Comments() {
   const { id } = useParams();
   const { getCommentsById, createComment } = useComments();
   const comments = getCommentsById(id);
+
   const handleAddComment = (data) => {
     createComment(data);
   };
-  const sortedComentList = comments?.sort(
+
+  const sortedCommentList = comments?.sort(
     (a, b) => parseFloat(b.created_at) - parseFloat(a.created_at)
   );
+
   return (
     <>
       <div className="my-10">
         <NewCommentForm onAddComment={handleAddComment} />
       </div>
 
-      {!!sortedComentList?.length && (
+      {!!sortedCommentList?.length && (
         <div className="my-10">
-          <CommentsList commentsList={sortedComentList} />
+          <CommentsList commentsList={sortedCommentList} />
         </div>
       )}
     </>

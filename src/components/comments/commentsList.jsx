@@ -22,4 +22,5 @@ function CommentsList({ commentsList }) {
 CommentsList.propTypes = {
   commentsList: PropTypes.array,
 };
+
 export default CommentsList;

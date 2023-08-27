@@ -11,8 +11,6 @@
 }
 
 .user:hover {
-  box-shadow: 0px 0px 5px #000000;
+  box-shadow: 0 0 5px #000000;
   transform: scale(1.02);
 }
-
-/*hover:shadow-xl transition duration-300 hover:scale-105*/

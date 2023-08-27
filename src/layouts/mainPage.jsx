@@ -20,9 +20,7 @@ function MainPage() {
         <div className="w-1/3 h-1 bg-black bg-gradient-to-r from-cyan-500 to-blue-500 mb-10" />
         {students && (
           <ul className="flex flex-wrap gap-10 justify-center">
-            {students.map((u) => (
-              <User key={u.id} userData={u} />
-            ))}
+            {students.map((u) => <User key={u.id} userData={u} />)}
           </ul>
         )}
       </section>
