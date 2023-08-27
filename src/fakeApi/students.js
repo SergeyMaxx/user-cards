@@ -7,7 +7,7 @@ const students = [
     info: 'Год назад я решил изменить свою жизнь и начал изучать JS',
     infoBefore: 'Раньше работал на гигантском грузовике с прицепом',
     img: 'https://i.postimg.cc/x1NvgTd5/itsme.jpg',
-    social: [{ type: 'tg', to: '' }, { type: 'vk', to: 'https://vk.com' }],
+    social: [{ type: 'tg', to: 'https://telegram.me/VakiTaki' }, { type: 'vk', to: 'https://vk.com' }],
     projectRole: 'В этом проекте я делал структуру, hoc, роуты, навигацию, хлебные крошки, страницу студента, прогресс-бары и слайдер угнал тоже я)',
     role: 'Cтудент',
     skills: [{ label: 'HTML', value: 70 }, { label: 'TypeScript', value: 80 }, {
@@ -26,7 +26,7 @@ const students = [
     info: "Изучаю frontend",
     infoBefore: "Ранее, во время универа, решил поменять профессию и начал развиваться в ИТ.",
     img: "https://i.postimg.cc/jSN66fh5/500-500.jpg",
-    social: [{ type: "tg", to: "https://@ZagSerSan" }, { type: "vk", to: "https://vk.com" }],
+    social: [{ type: "tg", to: "https://telegram.me/ZagSerSan" }, { type: "vk", to: "https://vk.com" }],
     projectRole: "отдыхал :D",
     role: "Cтудент",
     skills: [
