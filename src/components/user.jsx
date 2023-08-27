@@ -4,6 +4,7 @@ import Button from "./button";
 import { useStudents } from "../hooks/useStudents";
 import { getBookmarkStatus } from "../fakeApi/students";
 import { useNavigate } from "react-router-dom";
+import './user.css'
 
 const User = ({ userData }) => {
   const bookmarkStatus = getBookmarkStatus(userData.id);
