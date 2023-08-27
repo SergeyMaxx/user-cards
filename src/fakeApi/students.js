@@ -4,14 +4,14 @@ const students = [
       firstName: 'Андрей',
       lastName: 'Родин',
       age: 35,
-      info: 'О себе',
-      infoBefore: 'Чем занимался раньше',
+      info: 'Год назад я решил изменить свою жизнь и начал изучать JS',
+      infoBefore: 'Раньше работал на гигантском грузовике с прицепом',
       img: 'https://i.postimg.cc/x1NvgTd5/itsme.jpg',
       social: [{ type: "tg", to: "" }, { type: "vk", to: "https://vk.com" }],
-      projectRole: 'что-то делал',
+      projectRole: 'В этом проекте я делал структуру, hoc, роуты, навигацию, хлебные крошки, страницу студента, прогресс-бары и слайдер угнал тоже я)',
       role: 'студент',
-      skills: [{ label: 'HTML', value: 50 }, { label: 'TypeScript', value: 80 }, { label: 'Css', value: 30 }],
-      hobbies: [],
+      skills: [{ label: 'HTML', value: 70 }, { label: 'TypeScript', value: 80 }, { label: 'Css', value: 60 }, { label: 'JS', value: 90 }],
+      hobbies: ["Футбол", "Хардкор", "Кино", "Еда"],
       portfolio: ['https://i.postimg.cc/8C9FPdpR/2023-08-26-14-24-47.png', 'https://i.postimg.cc/wB88q7Kt/2023-08-26-14-26-13.png']
 
    },
@@ -48,7 +48,7 @@ const students = [
          { label: 'Redux', value: 50 },
          { label: 'CSS', value: 30 },
       ],
-      hobby: [],
+      hobbies: [],
       portfolio: [
          'https://i.postimg.cc/vTyHLZD4/fast-company.png',
          'https://i.postimg.cc/768xwZ3K/notepad.png',
