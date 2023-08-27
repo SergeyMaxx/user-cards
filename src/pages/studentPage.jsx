@@ -46,7 +46,9 @@ export default function StudentPage() {
                   {"Возраст: "}
                   {transformAge(student.age)}
                 </span>
-                <div className="">{student.role}</div>
+                <div className="">
+                  <Badge color={randomColor()} text={student.role} />
+                </div>
               </div>
               <div className="  w-full  flex justify-center">
                 <Button
@@ -61,18 +63,17 @@ export default function StudentPage() {
                   rounded="rounded-md"
                 />
               </div>
-              <div className=" flex flex-col justify-center items-center gap-6 rounded-xl border w-full p-4">
-                <h3>Хобби</h3>
-                <div className="flex flex-wrap">
-                  {student.hobbies.map((hobby) => (
-                    <Badge key={hobby} color={randomColor()} text={hobby} />
-                  ))}
-                </div>
-              </div>
               <div className=" h-full w-full rounded-xl border  p-2">
                 <h2 className=" text-2xl font-semibold text-[#151515] w-full text-center">
                   Хобби
                 </h2>
+                <div className=" flex justify-center items-center w-full h-full">
+                  <div className="flex flex-wrap justify-center items-center ">
+                    {student.hobbies.map((hobby) => (
+                      <Badge key={hobby} color={randomColor()} text={hobby} />
+                    ))}
+                  </div>
+                </div>
               </div>
               <div className=" rounded-xl border w-full p-2">
                 <h2 className=" text-2xl font-semibold text-[#151515] w-full text-center">
