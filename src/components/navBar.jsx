@@ -5,12 +5,20 @@ import { useStudents } from "../hooks/useStudents";
 import './navBar.css'
 
 function NavBar() {
-  const { favorite } = useStudents()
-  const [darkmode, setDarkmode] = useState(false)
+  const { favorite, darkmode, setDarkmode } = useStudents()
   
   const toggleDarkmode = () => {
-    document.body.classList.toggle('dark')
-    setDarkmode(prev => !prev)
+    let darkmodeType = localStorage.getItem('darkmode')
+
+    if (darkmodeType === 'light') {
+      localStorage.setItem('darkmode', 'dark')
+      setDarkmode(true)
+      document.body.classList.add('dark')
+    } else {
+      localStorage.setItem('darkmode', 'light')
+      setDarkmode(false)
+      document.body.classList.remove('dark')
+    }
   }
 
   return (
@@ -33,7 +41,7 @@ function NavBar() {
           )}
         </NavLink>
       ))}
-      <button onClick={toggleDarkmode} className={"darkmode-btn absolute top-[12%] right-[10px] w-[60px] h-[20px] bg-[#fff] border border-stone-400 rounded-xl" + (darkmode ? ' active' : '')}></button>
+      <button onClick={toggleDarkmode} className={"darkmode-btn absolute top-[12%] right-[10px] w-[45px] h-[20px] bg-[#fff] border border-stone-400 rounded-xl" + (darkmode ? ' active' : '')}></button>
     </nav>
   );
 }

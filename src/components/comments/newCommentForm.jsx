@@ -22,7 +22,7 @@ function NewCommentForm({ onAddComment }) {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <h2 className=" text-2xl font-semibold text-[#151515] w-full text-center">
+      <h2 className="dark:text-slate-100 text-2xl font-semibold text-[#151515] w-full text-center">
         Новый комментарий
       </h2>
       <div className=" flex justify-center">
@@ -31,14 +31,14 @@ function NewCommentForm({ onAddComment }) {
             value={data.name}
             placeholder="Имя"
             onChange={(e) => handleChange("name", e)}
-            className=" border p-1 rounded-md"
+            className="dark:bg-slate-900 border p-1 rounded-md"
           />
           <textarea
             rows={3}
             value={data.content}
             onChange={(e) => handleChange("content", e)}
             placeholder="Сообщение"
-            className=" border p-1 rounded-md"
+            className="dark:bg-slate-900 border p-1 rounded-md"
           />
           <Button
             type="open"

@@ -1,12 +1,25 @@
 .darkmode-btn {
-  background: radial-gradient(#303030 70%, #fff 70%);
+  background: url('../images/darkmode-black.png');
   background-size: 18px 18px;
   background-repeat: no-repeat;
   background-position: 0 0;
 
-  transition: background-position .2s ease 0s;
+  display: flex;
+  justify-content: start;
+  transition: all .2s ease 0s;
+}
+
+.darkmode-btn svg {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
 }
 
 .darkmode-btn.active {
+  background: url('../images/darkmode-white.png');
+  background-size: 18px 18px;
   background-position: 100% 100%;
+  background-repeat: no-repeat;
+
+  justify-content: end;
 }

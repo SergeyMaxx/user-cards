@@ -39,10 +39,10 @@ export default function StudentPage() {
                 />
               </div>
               <div className=" flex flex-col justify-center items-center gap-6 rounded-xl border w-full p-4">
-                <span className=" text-xl text-gray-800 font-medium">
+                <span className="dark:text-slate-100 text-xl text-gray-800 font-medium">
                   {student.firstName} {student.lastName}
                 </span>
-                <span>
+                <span className="dark:text-slate-100">
                   {"Возраст: "}
                   {transformAge(student.age)}
                 </span>
@@ -65,7 +65,7 @@ export default function StudentPage() {
               </div>
               {student.hobbies.length !== 0 &&
                 <div className="rounded-xl border p-[15px]">
-                  <h2 className="mb-[15px] text-2xl font-semibold text-[#151515] w-full text-center">
+                  <h2 className="dark:text-slate-100 mb-[15px] text-2xl font-semibold text-[#151515] w-full text-center">
                     Хобби
                   </h2>
                   <div className="flex flex-wrap justify-center">
@@ -76,7 +76,7 @@ export default function StudentPage() {
                 </div>
               }
               <div className=" rounded-xl border w-full p-2">
-                <h2 className=" text-2xl font-semibold text-[#151515] w-full text-center">
+                <h2 className="dark:text-slate-100 text-2xl font-semibold text-[#151515] w-full text-center">
                   Социальные сети
                 </h2>
                 <div className=" flex justify-center items-center gap-6 py-4">
@@ -98,15 +98,15 @@ export default function StudentPage() {
           </div>
           <div className="w-full  md:w-7/12 flex flex-col items-center gap-6">
             <div className="info  flex flex-col justify-between items-start rounded-xl border w-full p-4">
-              <h2 className="mb-[10px] text-2xl font-semibold text-[#151515] text-center w-full ">
+              <h2 className="dark:text-slate-100 mb-[10px] text-2xl font-semibold text-[#151515] text-center w-full ">
                 Информация о студенте
               </h2>
-              <p className="ml-[10px] mb-[10px]"><span className="text-[#979797]">Обо мне:</span> {student.info}</p>
-              <p className="ml-[10px] mb-[10px]"><span className="text-[#979797]">Предыстория:</span> {student.infoBefore}</p>
-              <p className="ml-[10px]"><span className="text-[#979797]">Роль в проекте:</span> {student.projectRole}</p>
+              <p className="dark:text-slate-100 ml-[10px] mb-[10px]"><span className="text-[#979797]">Обо мне:</span> {student.info}</p>
+              <p className="dark:text-slate-100 ml-[10px] mb-[10px]"><span className="text-[#979797]">Предыстория:</span> {student.infoBefore}</p>
+              <p className="dark:text-slate-100 ml-[10px]"><span className="text-[#979797]">Роль в проекте:</span> {student.projectRole}</p>
             </div>
             <div className="skils flex flex-col justify-between items-center rounded-xl border w-full p-4">
-              <h2 className="mb-[10px] text-2xl font-semibold text-[#151515]">Навыки</h2>
+              <h2 className="dark:text-slate-100 mb-[10px] text-2xl font-semibold text-[#151515]">Навыки</h2>
               <div className="flex justify-center items-center flex-wrap">
                 {student?.skills.map((skill) => (
                   <ProgressBar
@@ -120,7 +120,7 @@ export default function StudentPage() {
             </div>
             {student.portfolio?.length > 0 && (
               <div className="portfolio w-full  flex flex-col items-center  rounded-xl border p-4">
-                <h2 className=" text-2xl font-semibold text-[#151515] text-center mb-6">
+                <h2 className="dark:text-slate-100 text-2xl font-semibold text-[#151515] text-center mb-6">
                   Портфолио работ
                 </h2>
                 <div className=" w-2/3">

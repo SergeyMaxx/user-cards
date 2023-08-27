@@ -11,7 +11,7 @@ function ProgressBar({ styles, value, rounded = true, label, type = "bar" }) {
       <div className=" w-[200px] px-2 my-3">
         {label && (
           <div className="mb-[5px]">
-            <span className="text-gray-800 pl-1 text-xl  uppercase ">
+            <span className="dark:text-slate-100 text-gray-800 pl-1 text-xl  uppercase ">
               {label}
             </span>
           </div>
@@ -28,7 +28,7 @@ function ProgressBar({ styles, value, rounded = true, label, type = "bar" }) {
               className={" h-full bg-blue-500 flex items-center "}
               style={{ width: `${value}%` }}
             >
-              <span className="  text-xl pl-2  text-gray-800">{value}%</span>
+              <span className=" dark:text-slate-100 text-xl pl-2  text-gray-800">{value}%</span>
             </div>
           </div>
         )}
@@ -65,7 +65,7 @@ function ProgressBar({ styles, value, rounded = true, label, type = "bar" }) {
                 y={"50%"}
                 dy={"0.3em"}
                 textAnchor="middle"
-                className=" text-xl fill-gray-800"
+                className=" dark:fill-slate-100 text-xl fill-gray-800"
               >
                 {value}%
               </text>
