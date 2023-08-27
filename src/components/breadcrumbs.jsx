@@ -7,7 +7,7 @@ function Breadcrumbs() {
   const paths = location.pathname.split("/").filter((path) => path);
   return (
     <nav className=" flex gap-2 text-sm my-4">
-      <Link to="/" className=" hover:opacity-60 transition duration-300">
+      <Link to="/" className="dark:text-slate-200 hover:opacity-60 transition duration-300">
         Главная
       </Link>
       {paths.map((path, index) => {
@@ -22,10 +22,10 @@ function Breadcrumbs() {
 
         return (
           <div key={path} className=" flex gap-2">
-            <span>/</span>
+            <span className="dark:text-slate-200">/</span>
             <Link
               to={currentPath}
-              className=" hover:opacity-60 transition duration-300"
+              className="dark:text-slate-200 hover:opacity-60 transition duration-300"
             >
               {breadcrumbTitle}
             </Link>

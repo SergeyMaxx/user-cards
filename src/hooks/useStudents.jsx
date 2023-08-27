@@ -15,10 +15,14 @@ const StudentsProvider = ({ children }) => {
   const [favorite, setFavorite] = useState(
     JSON.parse(localStorage.getItem("favorite"))
   );
+  const [darkmode, setDarkmode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+
   useEffect(() => {
     getAllStudents();
+    // darkmode
+    setTheme()
   }, []);
   useEffect(() => {
     if (error !== null) {
@@ -47,9 +51,22 @@ const StudentsProvider = ({ children }) => {
     const { message } = error.response.data;
     setError(message);
   }
+  const setTheme = () => {
+    let darkmodeType = localStorage.getItem('darkmode')
+
+    if (darkmodeType && darkmodeType === 'dark') {
+      document.body.classList.add('dark')
+      setDarkmode(true)
+    } else {
+      localStorage.setItem('darkmode', 'light')
+      document.body.classList.remove('dark')
+    }
+
+  }
+
   return (
     <StudentsContext.Provider
-      value={{ students, getStudentById, favorite, getFavorite, isLoading }}
+      value={{ students, getStudentById, favorite, getFavorite, isLoading, darkmode, setDarkmode }}
     >
       <div className="relative">
         {children}

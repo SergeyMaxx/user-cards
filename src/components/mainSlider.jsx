@@ -29,10 +29,10 @@ function MainSlider({ slidesLayouts }) {
       </Swiper>
       <div className=" hidden sm:flex justify-between items-center py-2">
         <button className="swiper-main-button-prev">
-          <ChevronDoubleLeftIcon className=" w-10 h-10 hover:fill-slate-600 transition duration-300" />
+          <ChevronDoubleLeftIcon className="dark:fill-slate-100 w-10 h-10 hover:fill-slate-600 dark:hover:fill-slate-500 transition duration-300" />
         </button>
         <button className="swiper-main-button-next">
-          <ChevronDoubleLeftIcon className=" w-10 h-10 rotate-180 hover:fill-slate-600 transition duration-300" />
+          <ChevronDoubleLeftIcon className="dark:fill-slate-100 w-10 h-10 rotate-180 hover:fill-slate-600 dark:hover:fill-slate-500 transition duration-300" />
         </button>
       </div>
     </>
