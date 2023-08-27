@@ -15,7 +15,7 @@ const User = ({ userData }) => {
   };
 
   return (
-    <li className="w-[350px] h-[530px] border border-gray-300 rounded-md  flex flex-col justify-between items-center p-4 user">
+    <li className="dark:bg-slate-700 w-[350px] h-[530px]  rounded-md  flex flex-col justify-between items-center p-4 user">
       <div>
         <img className="rounded-md" src={userData.img} alt="Личная фотография" />
       </div>

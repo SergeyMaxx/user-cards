@@ -64,7 +64,7 @@ export default function StudentPage() {
                 />
               </div>
               {student.hobbies.length !== 0 && (
-                <div className="rounded-xl border p-[15px]">
+                <div className="w-full rounded-xl border p-[15px]">
                   <h2 className="dark:text-slate-100 mb-[15px] text-2xl font-semibold text-[#151515] w-full text-center">
                     Хобби
                   </h2>
