@@ -31,14 +31,14 @@ function NewCommentForm({ onAddComment }) {
             value={data.name}
             placeholder="Имя"
             onChange={(e) => handleChange("name", e)}
-            className="dark:bg-slate-900 border p-1 rounded-md"
+            className="dark:bg-slate-900 dark:text-slate-100 border p-1 rounded-md"
           />
           <textarea
             rows={3}
             value={data.content}
             onChange={(e) => handleChange("content", e)}
             placeholder="Сообщение"
-            className="dark:bg-slate-900 border p-1 rounded-md"
+            className="dark:bg-slate-900 dark:text-slate-100 border p-1 rounded-md"
           />
           <Button
             type="open"
