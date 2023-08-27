@@ -11,7 +11,7 @@ const students = [
     projectRole: 'что-то делал',
     role: 'студент',
     skills: [{ label: 'HTML', value: 50 }, { label: 'TypeScript', value: 80 }, { label: 'Css', value: 30 }],
-    hobby: [],
+    hobbies: [],
     portfolio: ['https://i.postimg.cc/8C9FPdpR/2023-08-26-14-24-47.png', 'https://i.postimg.cc/wB88q7Kt/2023-08-26-14-26-13.png']
 
   },
@@ -27,7 +27,7 @@ const students = [
     projectRole: "что-то делал",
     role: "студент",
     skills: [{ label: "HTML", value: 50 }, { label: "TypeScript", value: 5 }, { label: "Css", value: 70 }],
-    hobby: [],
+    hobbies: ['Гитара', 'Документальные фильмы', 'Общение', 'Бизнес', 'Музыка'],
     portfolio: ["https://i.postimg.cc/Kjw8cJ4D/weather-widget.png", "https://i.postimg.cc/KckKwM1D/tic-tac-toe.png"]
   },
   {
@@ -48,7 +48,7 @@ const students = [
       { label: 'Redux', value: 50 },
       { label: 'CSS', value: 30 },
     ],
-    hobby: [],
+    hobbies: [],
     portfolio: [
       'https://i.postimg.cc/vTyHLZD4/fast-company.png',
       'https://i.postimg.cc/768xwZ3K/notepad.png',

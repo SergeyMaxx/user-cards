@@ -5,12 +5,15 @@ import { transformAge } from "../utils/transformAge";
 import ProgressBar from "../components/progressBar";
 import { tgLogo, vkLogo } from "../images";
 import MainSlider from "../components/mainSlider";
+import Badge from "../components/badge";
+import { randomColor } from "../utils/randomColor";
 
 export default function StudentPage() {
   const navigate = useNavigate();
   const { id } = useParams();
   const { getStudentById, isLoading } = useStudents();
   const student = getStudentById(id);
+
   useEffect(() => {
     if (!student && !isLoading) {
       navigate("/");
@@ -39,6 +42,14 @@ export default function StudentPage() {
                   {transformAge(student.age)}
                 </span>
                 <div className="">{student.role}</div>
+              </div>
+              <div className=" flex flex-col justify-center items-center gap-6 rounded-xl border w-full p-4">
+                <h3>Хобби</h3>
+                <div className="flex flex-wrap">
+                  {student.hobbies.map(hobby => (
+                    <Badge key={hobby} color={randomColor()} text={hobby}/>
+                  ))}
+                </div>
               </div>
               <div className=" h-full w-full"></div>
               <div className=" rounded-xl border w-full p-2">
