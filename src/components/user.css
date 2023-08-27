@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.user {
+  background: #eeeeee;
+  border: 1px solid #adadad;
+  border-radius: 10px;
+  transition: all ease-in-out 0.3s;
+}
+
+.user:hover {
+  box-shadow: 0px 0px 5px #000000;
+  transform: scale(1.02);
+}
+
+/*hover:shadow-xl transition duration-300 hover:scale-105*/
