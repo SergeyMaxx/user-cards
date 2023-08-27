@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import './badge.css'
 
 const Badge = ({ color, text }) => {
+  // чтобы не менялся цвет при нажатии на кнопки на странице
   const [colorState, setColorState] = useState()
-
   if (!colorState) {
     setColorState(color)
   }

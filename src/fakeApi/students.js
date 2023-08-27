@@ -20,13 +20,18 @@ const students = [
       firstName: "Сергей",
       lastName: "Загорский",
       age: 25,
-      info: "О себе",
-      infoBefore: "Чем занимался раньше",
+      info: "Изучаю frontend",
+      infoBefore: "Ранее, во время универа, решил поменять профессию и начал развиваться в ИТ.",
       img: "https://i.postimg.cc/jSN66fh5/500-500.jpg",
-      social: [{ type: "tg", to: "@ZagSerSan" }, { type: "vk", to: "https://vk.com" }],
+      social: [{ type: "tg", to: "https://@ZagSerSan" }, { type: "vk", to: "https://vk.com" }],
       projectRole: "что-то делал",
       role: "студент",
-      skills: [{ label: "HTML", value: 50 }, { label: "TypeScript", value: 5 }, { label: "Css", value: 70 }],
+      skills: [
+        { label: "HTML", value: 50 },
+        { label: "Css", value: 70 },
+        { label: "JavaScript", value: 60 },
+        { label: "React", value: 30 }
+      ],
       hobbies: ['Гитара', 'Документальные фильмы', 'Общение', 'Бизнес', 'Музыка'],
       portfolio: ["https://i.postimg.cc/Kjw8cJ4D/weather-widget.png", "https://i.postimg.cc/KckKwM1D/tic-tac-toe.png"]
    },
