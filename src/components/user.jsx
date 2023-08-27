@@ -15,16 +15,16 @@ const User = ({ userData }) => {
   };
 
   return (
-    <li className="w-[350px] h-[500px] border border-gray-300 rounded-md shadow-sm flex flex-col justify-between items-center p-4 hover:shadow-xl transition duration-300">
+    <li className="w-[350px] h-[530px] border border-gray-300 rounded-md shadow-sm flex flex-col justify-between items-center p-4 hover:shadow-xl transition duration-300">
       <div>
         <img src={userData.img} alt="Личная фотография" />
       </div>
-      <p>
+      <p className="font-bold mt-4">
         {userData.firstName} {userData.lastName}
       </p>
-      <p>{userData.age} лет</p>
-      <div>О себе: {userData.info}</div>
-      <div className="w-[316px] flex justify-between">
+      <p className="mb-2">{userData.age} лет</p>
+      <div><span className="text-[#979797]">О себе:</span> {userData.info}</div>
+      <div className="w-[316px] flex justify-between mt-4">
         <Button
           type="open"
           color="bg-blue-500"
