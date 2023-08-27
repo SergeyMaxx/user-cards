@@ -23,7 +23,7 @@ const Favorite = () => {
               ))}
           </ul>
         ) : (
-          <h1 className="mt-[20px]">В избранном пусто</h1>
+          <h1 className="dark:text-slate-100 mt-[20px]">В избранном пусто</h1>
         )}
       </section>
     </>
