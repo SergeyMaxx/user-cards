@@ -1,20 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { routes } from "../routes";
 import { NavLink } from "react-router-dom";
 import { useStudents } from "../hooks/useStudents";
+import './navBar.css'
 
 function NavBar() {
-  const { favorite } = useStudents()
+  const { favorite, darkmode, setDarkmode } = useStudents()
+  
+  const toggleDarkmode = () => {
+    let darkmodeType = localStorage.getItem('darkmode')
+
+    if (darkmodeType === 'light') {
+      localStorage.setItem('darkmode', 'dark')
+      setDarkmode(true)
+      document.body.classList.add('dark')
+    } else {
+      localStorage.setItem('darkmode', 'light')
+      setDarkmode(false)
+      document.body.classList.remove('dark')
+    }
+  }
 
   return (
-    <nav className=" flex flex-col sm:flex-row justify-center items-center gap-6 pt-2 pb-4  border-b">
+    <nav className="relative flex flex-col sm:flex-row justify-center items-center gap-6 px-2 pb-4 border-b">
       {routes.map((route) => (
         <NavLink
           key={route.path}
           className={({ isActive }) =>
             isActive
-              ? "relative text-blue-600 cursor-default underline underline-offset-4 text-2xl"
-              : "relative text-blue-900 hover:text-blue-400 transition duration-300 text-2xl"
+              ? "dark:text-slate-100 relative text-blue-600 cursor-default underline underline-offset-4 text-2xl"
+              : "dark:text-slate-400 relative text-blue-900 hover:text-blue-400 dark:hover:text-slate-200 transition duration-300 text-2xl"
           }
           to={route.path}
         >
@@ -26,6 +41,7 @@ function NavBar() {
           )}
         </NavLink>
       ))}
+      <button onClick={toggleDarkmode} className={"darkmode-btn absolute top-[12%] right-[10px] w-[45px] h-[20px] bg-[#fff] border border-stone-400 rounded-xl" + (darkmode ? ' active' : '')}></button>
     </nav>
   );
 }
