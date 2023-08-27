@@ -9,7 +9,7 @@ function CommentsList({ commentsList }) {
         Комментарии
       </h2>
       <div className=" mb-3">
-        <div className=" flex flex-col gap-2 items-center">
+        <div className=" flex flex-col gap-2">
           {commentsList.map((comment) => (
             <Comment key={comment._id} comment={comment} />
           ))}
