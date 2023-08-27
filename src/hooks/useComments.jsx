@@ -15,6 +15,16 @@ const CommentsProvider = ({ children }) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  async function removeComment(commentId) {
+    try {
+      await commentsService.deleteComment(commentId)
+      setComments(prevState => prevState.filter(c => c._id !== commentId))
+    } catch (error) {
+      errorCatcher(error)
+      console.log(error)
+    } 
+  }
   async function createComment(data) {
     const comment = {
       ...data,
@@ -62,7 +72,7 @@ const CommentsProvider = ({ children }) => {
   }, [id]);
   return (
     <CommentContext.Provider
-      value={{ comments, createComment, isLoading, getCommentsById }}
+      value={{ comments, createComment, isLoading, getCommentsById, removeComment }}
     >
       {children}
     </CommentContext.Provider>

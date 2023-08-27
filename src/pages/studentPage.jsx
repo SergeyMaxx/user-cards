@@ -98,15 +98,15 @@ export default function StudentPage() {
           </div>
           <div className="w-full  md:w-7/12 flex flex-col items-center gap-6">
             <div className="info  flex flex-col justify-between items-start rounded-xl border w-full p-4">
-              <h2 className=" text-2xl font-semibold text-[#151515] text-center w-full ">
+              <h2 className="mb-[10px] text-2xl font-semibold text-[#151515] text-center w-full ">
                 Информация о студенте
               </h2>
-              <p className="indent-8">{student.info}</p>
-              <p className="indent-8">{student.infoBefore}</p>
-              <p className="indent-8">{student.projectRole}</p>
+              <p className="ml-[10px] mb-[10px]"><span className="text-[#979797]">Обо мне:</span> {student.info}</p>
+              <p className="ml-[10px] mb-[10px]"><span className="text-[#979797]">Предыстория:</span> {student.infoBefore}</p>
+              <p className="ml-[10px]"><span className="text-[#979797]">Роль в проекте:</span> {student.projectRole}</p>
             </div>
             <div className="skils flex flex-col justify-between items-center rounded-xl border w-full p-4">
-              <h2 className=" text-2xl font-semibold text-[#151515]">Навыки</h2>
+              <h2 className="mb-[10px] text-2xl font-semibold text-[#151515]">Навыки</h2>
               <div className="flex justify-center items-center flex-wrap">
                 {student?.skills.map((skill) => (
                   <ProgressBar
