@@ -9,13 +9,13 @@ const students = [
     img: 'https://i.postimg.cc/x1NvgTd5/itsme.jpg',
     social: [{ type: 'tg', to: '' }, { type: 'vk', to: 'https://vk.com' }],
     projectRole: 'В этом проекте я делал структуру, hoc, роуты, навигацию, хлебные крошки, страницу студента, прогресс-бары и слайдер угнал тоже я)',
-    role: 'студент',
+    role: 'Cтудент',
     skills: [{ label: 'HTML', value: 70 }, { label: 'TypeScript', value: 80 }, {
       label: 'Css',
       value: 60
     }, { label: 'JS', value: 90 }],
     hobbies: ['Футбол', 'Хардкор', 'Кино', 'Еда'],
-    portfolio: ['https://i.postimg.cc/8C9FPdpR/2023-08-26-14-24-47.png', 'https://i.postimg.cc/wB88q7Kt/2023-08-26-14-26-13.png']
+    portfolio: ['https://i.postimg.cc/pXzpMR2s/2023-08-27-17-04-41.png', 'https://i.postimg.cc/wB88q7Kt/2023-08-26-14-26-13.png', "https://i.postimg.cc/9MsFsNs3/2023-08-27-17-05-08.png"]
 
   },
   {
@@ -28,7 +28,7 @@ const students = [
     img: "https://i.postimg.cc/jSN66fh5/500-500.jpg",
     social: [{ type: "tg", to: "https://@ZagSerSan" }, { type: "vk", to: "https://vk.com" }],
     projectRole: "отдыхал :D",
-    role: "студент",
+    role: "Cтудент",
     skills: [
       { label: "HTML", value: 50 },
       { label: "Css", value: 70 },
