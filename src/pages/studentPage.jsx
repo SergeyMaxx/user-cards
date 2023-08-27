@@ -92,12 +92,16 @@ export default function StudentPage() {
                 <div className=" w-2/3">
                   <MainSlider
                     slidesLayouts={student.portfolio.map((slide, index) => (
-                      <img
+                      <div
                         key={index}
-                        src={slide}
-                        alt="Портфолио"
-                        className=" aspect-square object-cover"
-                      />
+                        className="flex justify-center items-center"
+                      >
+                        <img
+                          src={slide}
+                          alt="Портфолио"
+                          className=" aspect-square object-cover"
+                        />
+                      </div>
                     ))}
                   />
                 </div>
