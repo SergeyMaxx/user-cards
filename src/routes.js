@@ -1,3 +1,4 @@
+import { Navigate } from "react-router-dom";
 import Favorite from "./layouts/favorite";
 import MainPage from "./layouts/mainPage";
 import StudentPage from "./pages/studentPage";
@@ -21,5 +22,10 @@ export const routes = [
     element: <Favorite />,
     display: true,
     title: "Избранное",
-  }
+  },
+  {
+    path: "*",
+    element: <Navigate to="/" replace={true} />,
+  },
+
 ];
