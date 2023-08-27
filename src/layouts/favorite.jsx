@@ -1,12 +1,14 @@
 import React from "react";
 import { useStudents } from "../hooks/useStudents";
 import User from "../components/user";
+import Breadcrumbs from "../components/breadcrumbs";
 
 const Favorite = () => {
   const { students, favorite } = useStudents();
 
   return (
     <>
+      <Breadcrumbs />
       <section className="flex flex-col justify-between gap-2 items-center mb-6">
         <h1 className="dark:text-slate-100 uppercase text-3xl text-gray-900 ">Избранное</h1>
         <div className=" w-1/3 h-1 bg-black bg-gradient-to-r from-cyan-500 to-blue-500 mb-10" />

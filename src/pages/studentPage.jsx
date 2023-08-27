@@ -11,6 +11,7 @@ import Button from "../components/button";
 import { getBookmarkStatus } from "../fakeApi/students";
 import CommentsProvider from "../hooks/useComments";
 import Comments from "../components/comments/comments";
+import Breadcrumbs from "../components/breadcrumbs";
 
 export default function StudentPage() {
   const navigate = useNavigate();
@@ -101,12 +102,29 @@ export default function StudentPage() {
               <h2 className="dark:text-slate-100 mb-[10px] text-2xl font-semibold text-[#151515] text-center w-full ">
                 Информация о студенте
               </h2>
-              <p className="dark:text-slate-100 ml-[10px] mb-[10px]"><span className="dark:text-slate-400 text-[#979797]">Обо мне:</span> {student.info}</p>
-              <p className="dark:text-slate-100 ml-[10px] mb-[10px]"><span className="dark:text-slate-400 text-[#979797]">Предыстория:</span> {student.infoBefore}</p>
-              <p className="dark:text-slate-100 ml-[10px]"><span className="dark:text-slate-400 text-[#979797]">Роль в проекте:</span> {student.projectRole}</p>
+              <p className="dark:text-slate-100 ml-[10px] mb-[10px]">
+                <span className="dark:text-slate-400 text-[#979797]">
+                  Обо мне:
+                </span>{" "}
+                {student.info}
+              </p>
+              <p className="dark:text-slate-100 ml-[10px] mb-[10px]">
+                <span className="dark:text-slate-400 text-[#979797]">
+                  Предыстория:
+                </span>{" "}
+                {student.infoBefore}
+              </p>
+              <p className="dark:text-slate-100 ml-[10px]">
+                <span className="dark:text-slate-400 text-[#979797]">
+                  Роль в проекте:
+                </span>{" "}
+                {student.projectRole}
+              </p>
             </div>
             <div className="skils flex flex-col justify-between items-center rounded-xl border w-full p-4">
-              <h2 className="dark:text-slate-100 mb-[10px] text-2xl font-semibold text-[#151515]">Навыки</h2>
+              <h2 className="dark:text-slate-100 mb-[10px] text-2xl font-semibold text-[#151515]">
+                Навыки
+              </h2>
               <div className="flex justify-center items-center flex-wrap">
                 {student?.skills.map((skill) => (
                   <ProgressBar

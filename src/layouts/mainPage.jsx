@@ -2,6 +2,7 @@ import React from "react";
 import { useParams, Outlet } from "react-router-dom";
 import User from "../components/user";
 import { useStudents } from "../hooks/useStudents";
+import Breadcrumbs from "../components/breadcrumbs";
 
 function MainPage() {
   const { id } = useParams();
@@ -11,7 +12,9 @@ function MainPage() {
     <Outlet />
   ) : (
     <section className="flex flex-col justify-between gap-2 items-center mb-6 dark:bg-slate-800">
-      <h1 className="dark:text-slate-100 uppercase text-3xl text-gray-900 ">Наша команда</h1>
+      <h1 className="dark:text-slate-100 uppercase text-3xl text-gray-900 ">
+        Наша команда
+      </h1>
       <div className="w-1/3 h-1 bg-black bg-gradient-to-r from-cyan-500 to-blue-500 mb-10" />
       {students && (
         <ul className="flex flex-wrap gap-10 justify-center">

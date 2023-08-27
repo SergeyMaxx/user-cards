@@ -14,7 +14,7 @@ function App() {
         <header className="  container ">
           <NavBar />
         </header>
-        <main className="h-full  w-full container mb-[30px]"><Breadcrumbs />{appRoutes}</main>
+        <main className="h-full  w-full container mb-[30px]">{appRoutes}</main>
         <footer className="items-center relative  rounded-t-2xl container">
           <span className=" px-2 text-xl text-gray-500">&copy; <Link target="_blank" to={"https://result.school"} className="hover:dark:text-slate-100 hover:text-gray-800 transition duration-300">Result School</Link> Team 102</span>
         </footer>
