@@ -44,9 +44,9 @@ const students = [
     lastName: 'Максимов',
     age: 39,
     info: 'Frontend разработчик',
-    infoBefore: 'учился в Result School',
+    infoBefore: 'работал много зарабатывал мало, решил это исправить и пошёл в IT',
     img: 'https://i.postimg.cc/j5H8gPzQ/Smart-Select-Image-2020-01-14-20-48-50-1.png',
-    social: [{ type: "tg", to: "" }, { type: "vk", to: "https://vk.com" }],
+    social: [{ type: "tg", to: "https://t.me/Sergeymaxx" }, { type: "vk", to: "https://vk.com" }],
     projectRole: 'MainPage, Button',
     role: 'Team Lead',
     skills: [
@@ -56,7 +56,7 @@ const students = [
       { label: 'Redux', value: 50 },
       { label: 'CSS', value: 30 },
     ],
-    hobbies: [],
+    hobbies: ["кино", "музыка", "гитара", "спорт"],
     portfolio: [
       'https://i.postimg.cc/vTyHLZD4/fast-company.png',
       'https://i.postimg.cc/768xwZ3K/notepad.png',
