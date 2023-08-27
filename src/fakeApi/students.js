@@ -24,7 +24,7 @@ const students = [
       infoBefore: "Ранее, во время универа, решил поменять профессию и начал развиваться в ИТ.",
       img: "https://i.postimg.cc/jSN66fh5/500-500.jpg",
       social: [{ type: "tg", to: "https://@ZagSerSan" }, { type: "vk", to: "https://vk.com" }],
-      projectRole: "что-то делал",
+      projectRole: "отдыхал :D",
       role: "студент",
       skills: [
         { label: "HTML", value: 50 },
