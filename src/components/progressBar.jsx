@@ -8,7 +8,7 @@ function ProgressBar({ styles, value, rounded = true, label, type = "bar" }) {
   const dashOffset = dashArray - (dashArray * value) / 100;
   return (
     <>
-      <div className=" w-[200px] px-2 my-2">
+      <div className=" w-[200px] px-2 my-3">
         {label && (
           <div className=" w-full flex justify-center ">
             <span className=" text-gray-800 text-xl   uppercase ">{label}</span>

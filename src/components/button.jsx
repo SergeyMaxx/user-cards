@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Button = ({ color, onClick, text, rounded, disabled }) => {
   return (
     <button
-      className={`${color} text-white px-4 py-2 ${rounded} shadow-lg font-semibold mк-2`}
+      className={`${color} text-white px-4 py-2 ${rounded} shadow-lg font-semibold mк-2 hover:outline outline-4 outline-slate-400  duration-100`}
       onClick={onClick}
       disabled={disabled}
     >
