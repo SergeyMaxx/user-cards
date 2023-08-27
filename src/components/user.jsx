@@ -15,7 +15,7 @@ const User = ({ userData }) => {
   };
 
   return (
-    <li className="w-[350px] h-[530px] border border-gray-300 rounded-md shadow-sm flex flex-col justify-between items-center p-4 hover:shadow-xl transition duration-300 hover:scale-105">
+    <li className="w-[350px] h-[530px] border border-gray-300 rounded-md  flex flex-col justify-between items-center p-4 user">
       <div>
         <img className="rounded-md" src={userData.img} alt="Личная фотография" />
       </div>
@@ -23,7 +23,7 @@ const User = ({ userData }) => {
         {userData.firstName} {userData.lastName}
       </p>
       <p className="mb-2">{userData.age} лет</p>
-      <div><span className="text-[#979797]">О себе:</span> {userData.info}</div>
+      <div><span className="text-[#f1f1f1]">О себе:</span> {userData.info}</div>
       <div className="w-[316px] flex justify-between mt-4">
         <Button
           type="open"

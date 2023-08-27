@@ -2,3 +2,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.user {
+  background: #b7b7b7;
+  border: 1px solid #1B1C1D;
+  border-radius: 10px;
+  transition: all ease-in-out 0.3s;
+}
+
+.user:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.36), 0 8px 10px -6px rgba(0, 0, 0, 0.37),
+  inset -2px -2px 10px #5e5e5e, inset 5px 5px 5px #fff;
+  transform: scale(1.05);
+}
+
+/*hover:shadow-xl transition duration-300 hover:scale-105*/
