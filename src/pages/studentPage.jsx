@@ -97,7 +97,7 @@ export default function StudentPage() {
             </div>
           </div>
           <div className="w-full  md:w-7/12 flex flex-col items-center gap-6">
-            <div className="info  flex flex-col justify-between items-start rounded-xl border w-full p-4">
+            <div className="info  flex flex-col justify-between items-start rounded-xl border w-full p-4 gap-4">
               <h2 className=" text-2xl font-semibold text-[#151515] text-center w-full ">
                 Информация о студенте
               </h2>
