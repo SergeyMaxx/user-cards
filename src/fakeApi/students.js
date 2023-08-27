@@ -9,34 +9,34 @@ const students = [
     img: 'https://i.postimg.cc/x1NvgTd5/itsme.jpg',
     social: [{ type: 'tg', to: '' }, { type: 'vk', to: 'https://vk.com' }],
     projectRole: 'В этом проекте я делал структуру, hoc, роуты, навигацию, хлебные крошки, страницу студента, прогресс-бары и слайдер угнал тоже я)',
-    role: 'студент',
+    role: 'Cтудент',
     skills: [{ label: 'HTML', value: 70 }, { label: 'TypeScript', value: 80 }, {
       label: 'Css',
       value: 60
     }, { label: 'JS', value: 90 }],
     hobbies: ['Футбол', 'Хардкор', 'Кино', 'Еда'],
-    portfolio: ['https://i.postimg.cc/8C9FPdpR/2023-08-26-14-24-47.png', 'https://i.postimg.cc/wB88q7Kt/2023-08-26-14-26-13.png']
+    portfolio: ['https://i.postimg.cc/pXzpMR2s/2023-08-27-17-04-41.png', 'https://i.postimg.cc/wB88q7Kt/2023-08-26-14-26-13.png', "https://i.postimg.cc/9MsFsNs3/2023-08-27-17-05-08.png"]
 
   },
   {
-    id: '2',
-    firstName: 'Сергей',
-    lastName: 'Загорский',
+    id: "2",
+    firstName: "Сергей",
+    lastName: "Загорский",
     age: 25,
-    info: 'Изучаю frontend',
-    infoBefore: 'Ранее, во время универа, решил поменять профессию и начал развиваться в ИТ.',
-    img: 'https://i.postimg.cc/jSN66fh5/500-500.jpg',
-    social: [{ type: 'tg', to: 'https://@ZagSerSan' }, { type: 'vk', to: 'https://vk.com' }],
-    projectRole: 'отдыхал :D',
-    role: 'студент',
+    info: "Изучаю frontend",
+    infoBefore: "Ранее, во время универа, решил поменять профессию и начал развиваться в ИТ.",
+    img: "https://i.postimg.cc/jSN66fh5/500-500.jpg",
+    social: [{ type: "tg", to: "https://@ZagSerSan" }, { type: "vk", to: "https://vk.com" }],
+    projectRole: "отдыхал :D",
+    role: "Cтудент",
     skills: [
-      { label: 'HTML', value: 50 },
-      { label: 'Css', value: 70 },
-      { label: 'JavaScript', value: 60 },
-      { label: 'React', value: 30 }
+      { label: "HTML", value: 50 },
+      { label: "Css", value: 70 },
+      { label: "JavaScript", value: 60 },
+      { label: "React", value: 30 }
     ],
     hobbies: ['Гитара', 'Документальные фильмы', 'Общение', 'Бизнес', 'Музыка'],
-    portfolio: ['https://i.postimg.cc/Kjw8cJ4D/weather-widget.png', 'https://i.postimg.cc/KckKwM1D/tic-tac-toe.png']
+    portfolio: ["https://i.postimg.cc/Kjw8cJ4D/weather-widget.png", "https://i.postimg.cc/KckKwM1D/tic-tac-toe.png"]
   },
   {
     id: '3',
@@ -44,10 +44,10 @@ const students = [
     lastName: 'Максимов',
     age: 39,
     info: 'Frontend разработчик',
-    infoBefore: 'работал много, получал мало и решил это исправить',
+    infoBefore: 'учился в Result School',
     img: 'https://i.postimg.cc/j5H8gPzQ/Smart-Select-Image-2020-01-14-20-48-50-1.png',
-    social: [{ type: 'tg', to: '' }, { type: 'vk', to: 'https://vk.com' }],
-    projectRole: 'В этом проекте я делал главную страницу, компонент кнопки, и так по мелочи',
+    social: [{ type: "tg", to: "" }, { type: "vk", to: "https://vk.com" }],
+    projectRole: 'MainPage, Button',
     role: 'Team Lead',
     skills: [
       { label: 'HTML', value: 50 },
@@ -56,13 +56,13 @@ const students = [
       { label: 'Redux', value: 50 },
       { label: 'CSS', value: 30 },
     ],
-    hobbies: ['кино', 'музыка', 'гитара', 'спорт'],
+    hobbies: [],
     portfolio: [
       'https://i.postimg.cc/vTyHLZD4/fast-company.png',
       'https://i.postimg.cc/768xwZ3K/notepad.png',
       'https://i.postimg.cc/wxk6YH7k/todos.png'
     ]
-  }];
+  }]
 
 
 const fetchAllStudents = () =>

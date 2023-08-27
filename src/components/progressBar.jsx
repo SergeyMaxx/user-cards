@@ -10,10 +10,8 @@ function ProgressBar({ styles, value, rounded = true, label, type = "bar" }) {
     <>
       <div className=" w-[200px] px-2 my-3">
         {label && (
-          <div className="mb-[5px]">
-            <span className="text-gray-800 pl-1 text-xl  uppercase ">
-              {label}
-            </span>
+          <div className=" w-full flex justify-center ">
+            <span className=" text-gray-800 text-xl   uppercase ">{label}</span>
           </div>
         )}
         {type === "bar" && (

@@ -63,7 +63,7 @@ export default function StudentPage() {
                   rounded="rounded-md"
                 />
               </div>
-              {student.hobbies.length !== 0 &&
+              {student.hobbies.length !== 0 && (
                 <div className="rounded-xl border p-[15px]">
                   <h2 className="mb-[15px] text-2xl font-semibold text-[#151515] w-full text-center">
                     Хобби
@@ -74,7 +74,7 @@ export default function StudentPage() {
                     ))}
                   </div>
                 </div>
-              }
+              )}
               <div className=" rounded-xl border w-full p-2">
                 <h2 className=" text-2xl font-semibold text-[#151515] w-full text-center">
                   Социальные сети
@@ -97,16 +97,28 @@ export default function StudentPage() {
             </div>
           </div>
           <div className="w-full  md:w-7/12 flex flex-col items-center gap-6">
-            <div className="info  flex flex-col justify-between items-start rounded-xl border w-full p-4">
-              <h2 className="mb-[10px] text-2xl font-semibold text-[#151515] text-center w-full ">
+            <div className="info  flex flex-col justify-between items-start rounded-xl border w-full p-4 gap-4">
+              <h2 className=" text-2xl font-semibold text-[#151515] text-center w-full ">
                 Информация о студенте
               </h2>
-              <p className="ml-[10px] mb-[10px]"><span className="text-[#979797]">Обо мне:</span> {student.info}</p>
-              <p className="ml-[10px] mb-[10px]"><span className="text-[#979797]">Предыстория:</span> {student.infoBefore}</p>
-              <p className="ml-[10px]"><span className="text-[#979797]">Роль в проекте:</span> {student.projectRole}</p>
+              <p className="indent-8">
+                <span className=" font-semibold">О себе: </span> {student.info}
+              </p>
+              <p className="indent-8">
+                <span className=" font-semibold">Чем занимался до: </span>{" "}
+                {student.infoBefore}
+              </p>
+              <p className="indent-8">
+                <span className=" font-semibold">
+                  Что сделал в этом проекте:{" "}
+                </span>{" "}
+                {student.projectRole}
+              </p>
             </div>
             <div className="skils flex flex-col justify-between items-center rounded-xl border w-full p-4">
-              <h2 className="mb-[10px] text-2xl font-semibold text-[#151515]">Навыки</h2>
+              <h2 className="mb-[10px] text-2xl font-semibold text-[#151515]">
+                Навыки
+              </h2>
               <div className="flex justify-center items-center flex-wrap">
                 {student?.skills.map((skill) => (
                   <ProgressBar
