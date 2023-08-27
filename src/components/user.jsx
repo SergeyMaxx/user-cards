@@ -19,11 +19,11 @@ const User = ({ userData }) => {
       <div>
         <img src={userData.img} alt="Личная фотография" />
       </div>
-      <p className="font-bold mt-4">
+      <p className="dark:text-slate-100 font-bold mt-4">
         {userData.firstName} {userData.lastName}
       </p>
-      <p className="mb-2">{userData.age} лет</p>
-      <div><span className="text-[#979797]">О себе:</span> {userData.info}</div>
+      <p className="dark:text-slate-100 mb-2">{userData.age} лет</p>
+      <div className="dark:text-slate-100"><span className="text-[#979797]">О себе:</span> {userData.info}</div>
       <div className="w-[316px] flex justify-between mt-4">
         <Button
           type="open"

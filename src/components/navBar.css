@@ -1,0 +1,12 @@
+.darkmode-btn {
+  background: radial-gradient(#303030 70%, #fff 70%);
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  transition: background-position .2s ease 0s;
+}
+
+.darkmode-btn.active {
+  background-position: 100% 100%;
+}

@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const appRoutes = useRoutes(routes);
   return (
-    <div className=" flex justify-center relative min-h-screen px-1 ">
+    <div className="dark:bg-slate-800 flex justify-center relative min-h-screen px-1 ">
       <div className="flex flex-col items-center w-full max-w-7xl py-4">
         <header className="  container ">
           <NavBar />
