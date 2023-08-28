@@ -1,6 +1,7 @@
-import students from "./students";
+import students from './students'
+
 const api = {
   students
-};
+}
 
-export default api;
+export default api

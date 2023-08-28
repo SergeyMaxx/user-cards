@@ -1,4 +1,4 @@
-import tgLogo from "./tgLogo.svg";
-import vkLogo from "./vkLogo.svg"
+import tgLogo from './tgLogo.svg'
+import vkLogo from './vkLogo.svg'
 
-export { tgLogo, vkLogo }
+export {tgLogo, vkLogo}

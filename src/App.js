@@ -10,10 +10,12 @@ function App() {
   return (
     <div className="dark:bg-slate-800 flex justify-center relative min-h-screen px-1">
       <div className="flex flex-col items-center w-full max-w-[1200px] py-4">
-        <header className="  container ">
+        <header className="container ">
           <NavBar />
         </header>
-        <main className="h-full  w-full container mb-[30px]">{appRoutes}</main>
+        <main className="h-full  w-full container mb-[30px]">
+          {appRoutes}
+        </main>
         <footer className="items-center relative  rounded-t-2xl container">
           <span className=" px-2 text-xl text-gray-500">&copy;
             <Link
